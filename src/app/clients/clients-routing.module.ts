@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ClientDetailsPageComponent
   },
   {
-    path: "",
+    path: "add",
     component: AddClientPageComponent
   }
 ];
