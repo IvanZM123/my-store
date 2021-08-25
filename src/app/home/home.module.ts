@@ -10,7 +10,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    CarouselComponent
+    CarouselComponent,
   ],
   imports: [
     CommonModule,

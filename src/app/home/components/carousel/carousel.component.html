@@ -1,1 +1,31 @@
-<p>carousel works!</p>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div *ngFor="let item of items; index as i" [ngClass]="{ 'carousel-item': true, active: i < 1 }">
+            <div class="card border-0 bg-{{ item.color }}-transparent" style="overflow: hidden">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 p-5">
+                        <div class="circle bg-{{ item.color }}"></div>
+                        <div class="py-5">
+                            <h1>{{ item.title }}</h1>
+                            <p class="m-0">{{ item.subtitle }}</p>
+                        </div>
+                        <div class="rectangle bg-{{ item.color }}"></div>
+                    </div>
+                    <div class="section-img col-12 col-md-6 col-lg-6 d-none d-md-block">
+                        <div class="box h-100 bg-{{ item.color }} ms-auto">
+                            <img src="{{item.image}}" alt="{{ item.title }}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
