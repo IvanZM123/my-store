@@ -1,5 +1,66 @@
 {
     "clients": [],
-    "products": [],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Computadoras de escritorio",
+            "color": "success"
+        },
+        {
+            "id": 2,
+            "name": "Laptops",
+            "color": "primary"
+        },
+        {
+            "id": 3,
+            "name": "Smart Tvs",
+            "color": "purple"
+        },
+        {
+            "id": 4,
+            "name": "Smartphones",
+            "color": "grey"
+        },
+        {
+            "id": 5,
+            "name": "Teclados",
+            "color": "pink"
+        },
+        {
+            "id": 6,
+            "name": "Audifonos",
+            "color": "danger"
+        },
+        {
+            "id": 7,
+            "name": "Sofas",
+            "color": "brown"
+        },
+        {
+            "id": 8,
+            "name": "Tablets",
+            "color": "info"
+        },
+        {
+            "id": 9,
+            "name": "Mouse",
+            "color": "orange"
+        },
+        {
+            "id": 10,
+            "name": "Lamparas de noche",
+            "color": "aqua"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Microsoft Surface",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+            "price": 865.65,
+            "picture": "https://www.techadvisor.com/cmsdata/reviews/3799750/ms_surface_laptop_go_review_12_thumb800.jpg",
+            "categoriesId": 2
+        }
+    ],
     "orders": []
 }
