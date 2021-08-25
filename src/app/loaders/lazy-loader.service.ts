@@ -3,6 +3,10 @@ import { LoadChildren, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: "",
+    loadChildren: () => import("../home/home.module").then(m => m.HomeModule)
+  },
+  {
     path: "clients",
     loadChildren: () => import("../clients/clients.module").then(m => m.ClientsModule)
   },
@@ -31,7 +35,7 @@ export class LazyLoaderService {
     });
   }
 
-  loadModule(name: string): LoadChildren | undefined {
+  getModule(name: string) {
     return this.modulesMap.get(name);
   }
 }
