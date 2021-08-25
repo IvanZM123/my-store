@@ -2,6 +2,16 @@
     font-family: 'Poppins', sans-serif !important;
 }
 
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.bg-darken {
+    background-color: #1b1b1b;
+    color: white;
+}
+
 .bg-purple {
     background-color: #8c52ff;
     color: white;
