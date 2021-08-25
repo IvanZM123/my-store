@@ -31,19 +31,22 @@ export class HomeComponent {
       title: "Lista de productos",
       subtitle: "mas de 10 productos",
       image: "https://image.flaticon.com/icons/png/512/2250/2250295.png",
-      color: "brown"
+      color: "brown",
+      route: "products"
     },
     {
       title: "Lista de clientes",
       subtitle: "mas de 20 clientes",
       image: "https://image.flaticon.com/icons/png/512/4149/4149883.png",
-      color: "green"
+      color: "green",
+      route: "clients"
     },
     {
       title: "Lista de ordenes",
       subtitle: "mas de 25 ordenes",
       image: "https://image.flaticon.com/icons/png/512/5439/5439012.png",
-      color: "yellow"
+      color: "yellow",
+      route: "orders"
     }
   ];
 }

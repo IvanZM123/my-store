@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ClientsRoutingModule } from './clients-routing.module';
 
-import { HomeComponent } from './pages/home/home.component';
+import { ClientListPageComponent } from './pages/client-list-page/client-list-page.component';
+import { ClientDetailsPageComponent } from './pages/client-details-page/client-details-page.component';
+import { AddClientPageComponent } from './pages/add-client-page/add-client-page.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    ClientListPageComponent,
+    ClientDetailsPageComponent,
+    AddClientPageComponent
   ],
   imports: [
     CommonModule,

@@ -1,11 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+
+import { ClientDetailsPageComponent } from './pages/client-details-page/client-details-page.component';
+import { ClientListPageComponent } from './pages/client-list-page/client-list-page.component';
+import { AddClientPageComponent } from './pages/add-client-page/add-client-page.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: ClientListPageComponent
+  },
+  {
+    path: "/:clientId",
+    component: ClientDetailsPageComponent
+  },
+  {
+    path: "",
+    component: AddClientPageComponent
   }
 ];
 
