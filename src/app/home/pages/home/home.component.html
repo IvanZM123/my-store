@@ -1,3 +1,7 @@
 <div class="container-fluid">
-    <app-carousel [items]="items"></app-carousel>
+    <div class="row">
+        <div class="col-12 col-xl-4 p-3" *ngFor="let item of items">
+            <app-item-card [item]="item"></app-item-card>
+        </div>
+    </div>
 </div>
