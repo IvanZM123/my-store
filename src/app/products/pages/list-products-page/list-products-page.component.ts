@@ -1,8 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from "ngx-owl-carousel-o";
+import { Observable } from 'rxjs';
+
+import { Store as NgrxStore } from "@ngrx/store";
+import { Store } from "src/app/core/store/index";
+
+import { StartProductList } from 'src/app/core/store/products/product.actions';
+
+import { selectAllProducts } from 'src/app/core/store/products/product.selectors';
 
 import { Category, CategoryService } from 'src/app/core/services/products/category.service';
-import { Product, ProductService } from 'src/app/core/services/products/product.service';
+import { Product } from 'src/app/core/services/products/product.service';
 
 @Component({
   selector: 'app-list-products-page',
@@ -34,11 +42,11 @@ export class ListProductsPageComponent implements OnInit {
     },
   }
   categories: Array<Category> = [];
-  products: Array<Product> = [];
+  products$!: Observable<Array<Product>>;
 
   constructor(
     private categoryService: CategoryService,
-    private productService: ProductService
+    private store: NgrxStore<Store>
   ) {}
 
   ngOnInit(): void {
@@ -46,8 +54,7 @@ export class ListProductsPageComponent implements OnInit {
       categories => this.categories = categories
     );
 
-    this.productService.list().subscribe(
-      products => this.products = products
-    );
+    this.products$ = this.store.select(selectAllProducts);
+    this.store.dispatch(StartProductList());
   }
 }
