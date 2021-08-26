@@ -1,13 +1,11 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Store as NgrxStore } from "@ngrx/store";
+import { Store } from "src/app/core/store/index";
+import { StartProductCreate } from 'src/app/core/store/products/product.actions';
 
 import { Category, CategoryService } from 'src/app/core/services/products/category.service';
-import { ProductService } from 'src/app/core/services/products/product.service';
-
-import { NotificationComponent } from 'src/app/core/components/notification/notification.component';
 
 @Component({
   selector: 'app-add-product-page',
@@ -26,9 +24,7 @@ export class AddProductPageComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private productService: ProductService,
-    private snackbar: MatSnackBar,
-    private router: Router
+    private store: NgrxStore<Store>
   ) {}
 
   ngOnInit(): void {
@@ -39,21 +35,9 @@ export class AddProductPageComponent implements OnInit {
 
   create(): void {
     if (!this.form.valid) throw new Error("Invalid form");
-    
-    this.productService.create(this.form.value).subscribe(
-      product => {
-        this.snackbar.openFromComponent(NotificationComponent, {
-          duration: 3000,
-          data: {
-            icon: "check-circle",
-            message: `Se agrego ${ product.name } a los productos`
-          },
-          panelClass: [`bg-success`]
-        });
 
-        this.router.navigate(["products"]);
-      },
-      err => console.error("Error: ", err)
-    );
+    this.store.dispatch(StartProductCreate({
+      payload: this.form.value
+    }));
   }
 }

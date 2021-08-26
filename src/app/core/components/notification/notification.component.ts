@@ -1,10 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
-export interface Notification {
-  message: string;
-  icon: string;
-}
+import { Notification } from '../../helpers/notifier';
 
 @Component({
   selector: 'app-notification',
