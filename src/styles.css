@@ -5,6 +5,12 @@ body {
     background-color: #121212;
     color: white;
 }
+.text-green {
+    color: #198754;
+}
+.text-purple {
+    color: #8c52ff;
+}
 .bg-darken {
     background-color: #1b1b1b;
     color: white;

@@ -11,21 +11,25 @@ import { Product, ProductService } from 'src/app/core/services/products/product.
 })
 export class ListProductsPageComponent implements OnInit {
   customOptions: OwlOptions = {
+    autoplay: true,
     loop: true,
     dots: true,
     navSpeed: 700,
     responsive: {
       0: {
-        items: 1
-      },
-      400: {
         items: 2
       },
+      400: {
+        items: 4
+      },
       740: {
-        items: 3
+        items: 6
       },
       940: {
-        items: 12
+        items: 8
+      },
+      1024: {
+        items: 10
       }
     },
   }

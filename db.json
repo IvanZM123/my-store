@@ -5,7 +5,7 @@
             "id": 1,
             "name": "PC",
             "logo": "https://image.flaticon.com/icons/png/512/977/977250.png",
-            "color": "success"
+            "color": "green"
         },
         {
             "id": 2,
@@ -70,6 +70,22 @@
             "price": 865.65,
             "picture": "https://www.techadvisor.com/cmsdata/reviews/3799750/ms_surface_laptop_go_review_12_thumb800.jpg",
             "categoriesId": 2
+        },
+        {
+            "id": 2,
+            "name": "Smart Tv LG",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+            "price": 2250.90,
+            "picture": "https://www.adslzone.net/app/uploads-adslzone.net/2020/10/smarttv.jpg",
+            "categoriesId": 3
+        },
+        {
+            "id": 3,
+            "name": "Monitor Samsung Odyssey",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+            "price": 1235.45,
+            "picture": "https://images.samsung.com/is/image/samsung/p5/mx/monitors/odyssey/images/odyssey_f09_mo_03.jpg?$ORIGIN_JPG$",
+            "categoriesId": 1
         }
     ],
     "orders": []
