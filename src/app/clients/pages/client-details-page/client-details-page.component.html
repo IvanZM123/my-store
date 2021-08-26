@@ -1,1 +1,7 @@
-<p>client-details-page works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="client" class="col-12 col-lg-4 p-3">
+            <app-client-card [client]="client"></app-client-card>
+        </div>
+    </div>
+</div>

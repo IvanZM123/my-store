@@ -15,7 +15,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="item-client" *ngFor="let client of clients">
+                <tr
+                    *ngFor="let client of clients"
+                    routerLink="/clients/show/{{ client.id }}"
+                    class="item-client"
+                >
                     <th scope="row" class="p-3 border-0">{{ client.id }}</th>
                     <td class="p-3 border-0">
                         <img

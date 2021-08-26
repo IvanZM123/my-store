@@ -24,4 +24,8 @@ export class ClientService {
   list(): Observable<Array<Client>> {
     return this.http.get<Array<Client>>(this.url);
   }
+
+  get(id: string | number): Observable<Client> {
+    return this.http.get<Client>(`${ this.url }/${ id }`);
+  }
 }

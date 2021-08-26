@@ -1,0 +1,30 @@
+<div class="card border-0 shadow bg-darken text-white">
+    <div class="card-picture border-0 bg-darken">
+        <img
+            src="https://picsum.photos/600/250"
+            style="object-fit: cover;"
+            height="100%"
+            alt="Cover page"
+            width="100%"
+        >
+        <div class="card-avatar-float">
+            <img
+                alt="{{ client.firstName }}"
+                src="{{ client.avatar }}"
+                class="rounded-circle"
+                style="object-fit: cover;"
+                width="100%"
+                height="100%"
+            >
+        </div>
+    </div>
+    <div class="card-body bg-darken pt-5">
+        <h3 class="m-0">
+            <strong>{{ client.firstName }} {{ client.lastName }}</strong>
+        </h3>
+        <ul class="list-group">
+            <li class="list-group-item px-0 bg-darken border-0">{{ client.phone }}</li>
+            <li class="list-group-item px-0 bg-darken border-0">{{ client.NIT }}</li>
+        </ul>
+    </div>
+</div>

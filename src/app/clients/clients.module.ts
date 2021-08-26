@@ -6,12 +6,14 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientListPageComponent } from './pages/client-list-page/client-list-page.component';
 import { ClientDetailsPageComponent } from './pages/client-details-page/client-details-page.component';
 import { AddClientPageComponent } from './pages/add-client-page/add-client-page.component';
+import { ClientCardComponent } from './components/client-card/client-card.component';
 
 @NgModule({
   declarations: [
     ClientListPageComponent,
     ClientDetailsPageComponent,
-    AddClientPageComponent
+    AddClientPageComponent,
+    ClientCardComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
 .item-client {
     transition: .3s ease;
+    cursor: pointer;
 }
 
 .item-client:hover {

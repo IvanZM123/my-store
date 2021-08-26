@@ -11,7 +11,7 @@ const routes: Routes = [
     component: ClientListPageComponent
   },
   {
-    path: "/:clientId",
+    path: "show/:clientId",
     component: ClientDetailsPageComponent
   },
   {
