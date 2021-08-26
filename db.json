@@ -1,5 +1,46 @@
 {
-  "clients": [],
+  "clients": [
+    {
+      "id": 1,
+      "firstName": "Matthew Charles",
+      "lastName": "Sanders",
+      "phone": 22085815,
+      "NIT": "0000-0000-0000-0",
+      "avatar": "https://pbs.twimg.com/profile_images/987751177466122241/ociHLCs3_400x400.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "Vincent Damon",
+      "lastName": "Furnier",
+      "phone": 22584329,
+      "NIT": "0000-0000-0000-0",
+      "avatar": "https://www.todomusica.org/imagenes/680x380/alice_cooper.jpg"
+    },
+    {
+      "id": 3,
+      "firstName": "James Alan",
+      "lastName": "Hetfield",
+      "phone": 22844267,
+      "NIT": "0000-0000-0000-0",
+      "avatar": "https://marvin.com.mx/wp-content/uploads/2020/01/metallica-james-hetfield-exhibicion-autos.jpg"
+    },
+    {
+      "id": 4,
+      "firstName": "Dave Scott",
+      "lastName": "Munstaine",
+      "phone": 22601468,
+      "NIT": "0000-0000-0000-0",
+      "avatar": "https://mariskalrock.com/wp-content/uploads/2019/04/dave-mustaine-1.jpg"
+    },
+    {
+      "id": 5,
+      "firstName": "Taylor Michel",
+      "lastName": "Momsen",
+      "phone": 23461135,
+      "NIT": "0000-0000-0000-0",
+      "avatar": "https://cdn-3.expansion.mx/dims4/default/2ee5781/2147483647/strip/true/crop/620x720+0+0/resize/600x697!/format/webp/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2Fmedia%2F2011%2F07%2F25%2Ftaylor1.jpg"
+    }
+  ],
   "categories": [
     {
       "id": 1,

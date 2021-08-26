@@ -1,0 +1,7 @@
+.item-client {
+    transition: .3s ease;
+}
+
+.item-client:hover {
+    background: #111111;
+}
