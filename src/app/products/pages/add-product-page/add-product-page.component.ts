@@ -1,5 +1,13 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { Category, CategoryService } from 'src/app/core/services/products/category.service';
+import { ProductService } from 'src/app/core/services/products/product.service';
+
+import { NotificationComponent } from 'src/app/core/components/notification/notification.component';
 
 @Component({
   selector: 'app-add-product-page',
@@ -14,12 +22,38 @@ export class AddProductPageComponent implements OnInit {
     price: new FormControl("", [Validators.required]),
     description: new FormControl("", [Validators.required])
   });
+  categories: Array<Category> = [];
 
-  constructor() {}
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService,
+    private snackbar: MatSnackBar,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.categoryService.list().subscribe(
+      categories => this.categories = categories
+    );
+  }
 
   create(): void {
-    console.log(this.form.value);
+    if (!this.form.valid) throw new Error("Invalid form");
+    
+    this.productService.create(this.form.value).subscribe(
+      product => {
+        this.snackbar.openFromComponent(NotificationComponent, {
+          duration: 3000,
+          data: {
+            icon: "check-circle",
+            message: `Se agrego ${ product.name } a los productos`
+          },
+          panelClass: [`bg-success`]
+        });
+
+        this.router.navigate(["products"]);
+      },
+      err => console.error("Error: ", err)
+    );
   }
 }

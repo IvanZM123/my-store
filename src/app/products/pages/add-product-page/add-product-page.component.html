@@ -50,10 +50,11 @@
                                         id="category"
                                         required
                                     >
-                                        <option value="" class="bg-darken">Option 1</option>
-                                        <option value="1" class="bg-darken">Option 2</option>
-                                        <option value="2" class="bg-darken">Option 3</option>
-                                        <option value="3" class="bg-darken">Option 4</option>
+                                        <option
+                                            class="bg-darken"
+                                            *ngFor="let category of categories"
+                                            value="{{ category.id }}"
+                                        >{{ category.name }}</option>
                                     </select>
                                     <small class="placeholder bg-darken">Seleccione una categoria</small>
                                 </label>

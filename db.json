@@ -1,92 +1,140 @@
 {
-    "clients": [],
-    "categories": [
-        {
-            "id": 1,
-            "name": "PC",
-            "logo": "https://image.flaticon.com/icons/png/512/977/977250.png",
-            "color": "green"
-        },
-        {
-            "id": 2,
-            "name": "Laptops",
-            "logo": "https://image.flaticon.com/icons/png/512/123/123400.png",
-            "color": "primary"
-        },
-        {
-            "id": 3,
-            "name": "Smart Tvs",
-            "logo": "https://image.flaticon.com/icons/png/512/4693/4693334.png",
-            "color": "purple"
-        },
-        {
-            "id": 4,
-            "name": "Smartphones",
-            "logo": "https://image.flaticon.com/icons/png/512/186/186239.png",
-            "color": "grey"
-        },
-        {
-            "id": 5,
-            "name": "Teclados",
-            "logo": "https://image.flaticon.com/icons/png/512/595/595550.png",
-            "color": "pink"
-        },
-        {
-            "id": 6,
-            "name": "Audifonos",
-            "logo": "https://image.flaticon.com/icons/png/512/3791/3791461.png",
-            "color": "danger"
-        },
-        {
-            "id": 7,
-            "name": "Sofas",
-            "logo": "https://image.flaticon.com/icons/png/512/2148/2148967.png",
-            "color": "brown"
-        },
-        {
-            "id": 8,
-            "name": "Tablets",
-            "logo": "https://image.flaticon.com/icons/png/512/2972/2972178.png",
-            "color": "info"
-        },
-        {
-            "id": 9,
-            "name": "Mouse",
-            "logo": "https://image.flaticon.com/icons/png/512/815/815703.png",
-            "color": "orange"
-        },
-        {
-            "id": 10,
-            "name": "Lamparas de noche",
-            "logo": "https://image.flaticon.com/icons/png/512/1863/1863183.png",
-            "color": "aqua"
-        }
-    ],
-    "products": [
-        {
-            "id": 1,
-            "name": "Microsoft Surface",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-            "price": 865.65,
-            "picture": "https://www.techadvisor.com/cmsdata/reviews/3799750/ms_surface_laptop_go_review_12_thumb800.jpg",
-            "categoriesId": 2
-        },
-        {
-            "id": 2,
-            "name": "Smart Tv LG",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-            "price": 2250.90,
-            "picture": "https://www.adslzone.net/app/uploads-adslzone.net/2020/10/smarttv.jpg",
-            "categoriesId": 3
-        },
-        {
-            "id": 3,
-            "name": "Monitor Samsung Odyssey",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-            "price": 1235.45,
-            "picture": "https://images.samsung.com/is/image/samsung/p5/mx/monitors/odyssey/images/odyssey_f09_mo_03.jpg?$ORIGIN_JPG$",
-            "categoriesId": 1
-        }
-    ],
-    "orders": []
+  "clients": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "PC",
+      "logo": "https://image.flaticon.com/icons/png/512/977/977250.png",
+      "color": "green"
+    },
+    {
+      "id": 2,
+      "name": "Laptops",
+      "logo": "https://image.flaticon.com/icons/png/512/123/123400.png",
+      "color": "primary"
+    },
+    {
+      "id": 3,
+      "name": "Smart Tvs",
+      "logo": "https://image.flaticon.com/icons/png/512/4693/4693334.png",
+      "color": "purple"
+    },
+    {
+      "id": 4,
+      "name": "Smartphones",
+      "logo": "https://image.flaticon.com/icons/png/512/186/186239.png",
+      "color": "grey"
+    },
+    {
+      "id": 5,
+      "name": "Teclados",
+      "logo": "https://image.flaticon.com/icons/png/512/595/595550.png",
+      "color": "pink"
+    },
+    {
+      "id": 6,
+      "name": "Audifonos",
+      "logo": "https://image.flaticon.com/icons/png/512/3791/3791461.png",
+      "color": "danger"
+    },
+    {
+      "id": 7,
+      "name": "Sofas",
+      "logo": "https://image.flaticon.com/icons/png/512/2148/2148967.png",
+      "color": "brown"
+    },
+    {
+      "id": 8,
+      "name": "Tablets",
+      "logo": "https://image.flaticon.com/icons/png/512/2972/2972178.png",
+      "color": "info"
+    },
+    {
+      "id": 9,
+      "name": "Mouse",
+      "logo": "https://image.flaticon.com/icons/png/512/815/815703.png",
+      "color": "orange"
+    },
+    {
+      "id": 10,
+      "name": "Lamparas de noche",
+      "logo": "https://image.flaticon.com/icons/png/512/1863/1863183.png",
+      "color": "aqua"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Microsoft Surface",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "price": 865.65,
+      "picture": "https://www.techadvisor.com/cmsdata/reviews/3799750/ms_surface_laptop_go_review_12_thumb800.jpg",
+      "categoriesId": 2
+    },
+    {
+      "id": 2,
+      "name": "Smart Tv LG",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "price": 2250.9,
+      "picture": "https://www.adslzone.net/app/uploads-adslzone.net/2020/10/smarttv.jpg",
+      "categoriesId": 3
+    },
+    {
+      "id": 3,
+      "name": "Monitor Samsung Odyssey",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "price": 1235.45,
+      "picture": "https://images.samsung.com/is/image/samsung/p5/mx/monitors/odyssey/images/odyssey_f09_mo_03.jpg?$ORIGIN_JPG$",
+      "categoriesId": 1
+    },
+    {
+      "name": "Samsung Galaxy Z",
+      "picture": "https://nl.letsgodigital.org/uploads/2021/01/samsung-opvouwbare-smartphone-galaxy-z-fold-3-5g.jpg",
+      "categoriesId": "4",
+      "price": 455.8,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "id": 4
+    },
+    {
+      "name": "Audifonos con cable",
+      "picture": "https://cr.epaenlinea.com/pub/media/version20200605/catalog/product/cache/a83b746ef25730b9cb1cc414bac0f04a/1/6/1676052_1.jpg",
+      "categoriesId": "6",
+      "price": 25,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "id": 5
+    },
+    {
+      "name": "Microsoft Teclado",
+      "picture": "https://cdn.elchangarro.com.sv/image/products/ic/25192641-3808.jpg?quality=40&width=1000&height=1000",
+      "categoriesId": "5",
+      "price": 80.85,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "id": 6
+    },
+    {
+      "name": "Lampara de mesa",
+      "picture": "https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/hogartotal/C/Como-elegir-lamparas-de-mesa.jpg",
+      "categoriesId": "10",
+      "price": 60.55,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "id": 7
+    },
+    {
+      "name": "Sofa minimalista",
+      "picture": "https://www.listaminimalista.com/wp-content/uploads/2019/08/Novohogar-Elegante-sof%C3%A1-Cama-3-plazas-Malm%C3%B6-Confortable-y-F%C3%A1cil-de-Abrir-Gracias-a-su-Sistema-%E2%80%9CClic-clac-o-%E2%80%9Cde-Libro-cerrado-1024x683.jpg",
+      "categoriesId": "7",
+      "price": 455.55,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "id": 8
+    },
+    {
+      "name": "Tablets",
+      "picture": "https://m.media-amazon.com/images/I/71JxproF3bL._AC_SY450_.jpg",
+      "categoriesId": "8",
+      "price": 175.8,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "id": 9
+    }
+  ],
+  "orders": []
 }

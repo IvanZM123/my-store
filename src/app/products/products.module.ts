@@ -10,6 +10,7 @@ import { ProductDetailsPageComponent } from './pages/product-details-page/produc
 import { AddProductPageComponent } from './pages/add-product-page/add-product-page.component';
 
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { AngularMaterial } from '../core/material/angular-material';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     CommonModule,
     ProductsRoutingModule,
     ReactiveFormsModule,
-    CarouselModule
+    CarouselModule,
+    AngularMaterial
   ]
 })
 export class ProductsModule {}
