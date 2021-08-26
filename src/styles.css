@@ -5,6 +5,9 @@ body {
     background-color: #121212;
     color: white;
 }
+.spacer {
+    flex: 1 1 auto;
+  }
 .text-green {
     color: #198754;
 }
@@ -54,4 +57,148 @@ body {
 }
 .bg-green-transparent {
     background-color: rgba(25, 135, 84, 0.4);
+}
+.bg-border-side-purple {
+    border-left-color: #8c52ff !important;
+    border-right-color: #8c52ff !important;
+}
+.bg-border-side-green {
+    border-left-color: #198754 !important;
+    border-right-color: #198754 !important;
+}
+.bg-border-side-primary {
+    border-left-color: rgba(13, 110, 253, 1) !important;
+    border-right-color: rgba(13, 110, 253, 1) !important;
+}
+
+
+/* Fields */
+.custom-field {
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.custom-field input,
+.custom-field textarea,
+.custom-field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+    padding: 16px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.custom-field .placeholder {
+    position: absolute;
+    cursor: text;
+    opacity: 1;
+    left: 12px;
+    font-size: 16px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    transition: top 0.3s ease;
+}
+
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field textarea:valid + .placeholder,
+.custom-field textarea:focus + .placeholder,
+.custom-field select:valid + .placeholder,
+.custom-field select:focus + .placeholder {
+    top: 10px;
+    font-size: 12px;
+    color: #8c52ff;
+}
+
+.custom-field.outlined input,
+.custom-field.outlined textarea,
+.custom-field.outlined select {
+    background: none;
+    border: 2px solid rgb(172, 167, 167);
+    transition: border-color 0.3s ease;
+}
+
+.custom-field.outlined input:valid,
+.custom-field.outlined input:focus,
+.custom-field.outlined textarea:valid,
+.custom-field.outlined textarea:focus,
+.custom-field.outlined select:valid,
+.custom-field.outlined select:focus {
+    border-color: #8c52ff;
+    transition-delay: 0.1s;
+}
+
+.custom-field.outlined input:focus + .placeholder,
+.custom-field.outlined input:valid + .placeholder,
+.custom-field.outlined textarea:focus + .placeholder,
+.custom-field.outlined textarea:valid + .placeholder,
+.custom-field.outlined select:focus + .placeholder,
+.custom-field.outlined select:valid + .placeholder {
+    left: 8px;
+    padding: 0px 5px;
+}
+
+.custom-field.outlined input:valid + .placeholder,
+.custom-field.outlined input:focus + .placeholder,
+.custom-field.outlined textarea:valid + .placeholder,
+.custom-field.outlined textarea:focus + .placeholder,
+.custom-field.outlined select:valid + .placeholder,
+.custom-field.outlined select:focus + .placeholder {
+    top: 21px;
+    background: #1b1b1b;
+}
+
+/** error */
+.custom-field.error {
+    color: #DD5E5D;
+}
+
+.custom-field.error input:valid,
+.custom-field.error input:focus,
+.custom-field.error textarea:valid,
+.custom-field.error textarea:focus,
+.custom-field.error select:valid,
+.custom-field.error select:focus {
+    border-color: #DD5E5D;
+    transition-delay: 0.1s;
+}
+
+.custom-field.error input:valid + .placeholder,
+.custom-field.error input:focus + .placeholder,
+.custom-field.error textarea:valid + .placeholder,
+.custom-field.error textarea:focus + .placeholder,
+.custom-field.error select:valid + .placeholder,
+.custom-field.error select:focus + .placeholder {
+    color: #DD5E5D;
+}
+
+/* success */
+.custom-field.success {
+    color: #009432;
+}
+
+.custom-field.success input:valid,
+.custom-field.success input:focus,
+.custom-field.success textarea:valid,
+.custom-field.success textarea:focus,
+.custom-field.success select:valid,
+.custom-field.success select:focus {
+    border-color: #009432;
+    transition-delay: 0.1s;
+}
+
+.custom-field.success input:valid + .placeholder,
+.custom-field.success input:focus + .placeholder,
+.custom-field.success textarea:valid + .placeholder,
+.custom-field.success textarea:focus + .placeholder,
+.custom-field.success select:valid + .placeholder,
+.custom-field.success select:focus + .placeholder {
+    color: #009432;
 }

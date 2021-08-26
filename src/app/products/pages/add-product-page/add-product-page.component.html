@@ -1,1 +1,106 @@
-<p>add-product-page works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-9 col-lg-7 col-xl-5 p-2">
+            <div class="card border-0 bg-darken shadow" style="border-radius: 20px;">
+                <div class="card-body p-4">
+                    <form class="text-white">
+                        <div class="row">
+                            <div class="col-12 py-2">
+                                <label for="name" class="custom-field outlined">
+                                    <input
+                                        autocomplete="off"
+                                        class="text-white"
+                                        data-type="name"
+                                        name="name"
+                                        id="name"
+                                        autofocus
+                                        required
+                                    >
+                                    <small class="placeholder bg-darken">Nombre del producto</small>
+                                </label>
+                                <small class="form-text text-white">Escriba el nombre del producto.</small>
+                            </div>
+                            <div class="col-12 py-2">
+                                <label for="picture" class="custom-field outlined">
+                                    <input
+                                        type="url"
+                                        autocomplete="off"
+                                        class="text-white"
+                                        data-type="name"
+                                        name="picture"
+                                        id="picture"
+                                        autofocus
+                                        required
+                                    >
+                                    <small class="placeholder bg-darken">URL de la imagen</small>
+                                </label>
+                                <small class="form-text text-white">Ingrese la URL de la imagen del producto</small>
+                            </div>
+                            <div class="col-12 col-md-6 py-2">
+                                <label for="category" class="custom-field outlined">
+                                    <select
+                                        type="url"
+                                        autocomplete="off"
+                                        class="text-white"
+                                        data-type="name"
+                                        name="category"
+                                        id="category"
+                                        autofocus
+                                        required
+                                    >
+                                        <option value="" class="bg-darken">Option 1</option>
+                                        <option value="" class="bg-darken">Option 2</option>
+                                        <option value="" class="bg-darken">Option 3</option>
+                                        <option value="" class="bg-darken">Option 4</option>
+                                    </select>
+                                    <small class="placeholder bg-darken">Seleccione una categoria</small>
+                                </label>
+                                <small class="form-text text-white">Agregue una categoria</small>
+                            </div>
+                            <div class="col-12 col-md-6 py-2">
+                                <label for="price" class="custom-field outlined">
+                                    <input
+                                        type="number"
+                                        autocomplete="off"
+                                        class="text-white"
+                                        data-type="name"
+                                        name="price"
+                                        id="price"
+                                        required
+                                    >
+                                    <small class="placeholder bg-darken">Precio</small>
+                                </label>
+                                <small class="form-text text-white">Ingrese el precio del producto</small>
+                            </div>
+                            <div class="col-12 py-2">
+                                <label for="name" class="custom-field outlined">
+                                    <textarea
+                                        autocomplete="off"
+                                        class="text-white"
+                                        data-type="name"
+                                        name="name"
+                                        id="name"
+                                        autofocus
+                                        required
+                                    ></textarea>
+                                    <small class="placeholder bg-darken">Descripcion</small>
+                                </label>
+                                <small class="form-text text-white">Agregue una descripcion al producto.</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center pt-3">
+                            <span class="spacer"></span>
+                            <button
+                                routerLink="/products"
+                                class="btn text-purple mx-2"
+                            >Cancelar</button>
+                            <button
+                                class="btn bg-purple border-0 shadow py-2 px-3 rounded-pill mx-2"
+                            >Ingresar producto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

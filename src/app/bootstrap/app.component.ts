@@ -27,10 +27,10 @@ export class AppComponent implements OnInit {
   }
 
   loadLazyModule(name: string) {
-    const { path, nameModule } = this.parseRoute(name);
+    const { nameModule } = this.parseRoute(name);
 
     this.router.config.push({
-      path,
+      path: nameModule,
       loadChildren: this.lazyLoader.getModule(nameModule)
     });
 
@@ -46,6 +46,6 @@ export class AppComponent implements OnInit {
     const path: string = route.replace("/", "");
     const nameModule: string = path.split("/")[0];
 
-    return { path, nameModule };
+    return { nameModule };
   }
 }

@@ -20,11 +20,18 @@
 
 <div class="container-fluid py-4">
     <div class="row justify-content-sm-center justify-content-md-start">
-        <div class="col-12 pb-4">
-            <h1 class="m-0">
-                <strong>Productos</strong>
-            </h1>
-            <p class="text-muted m-0">Encuentra los mejores productos a precios accesibles.</p>
+        <div class="d-flex align-items-center w-100 col-12 pb-4">
+            <div>
+                <h1 class="m-0">
+                    <strong>Productos</strong>
+                </h1>
+                <p class="text-purple m-0">Encuentra los mejores productos a precios accesibles.</p>
+            </div>
+            <span class="spacer"></span>
+            <button
+                class="btn bg-purple m-0 border-0 rounded-pill"
+                routerLink="/products/add"
+            >Agregar producto</button>
         </div>
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3" *ngFor="let product of products">
             <app-product-card [product]="product"></app-product-card>
