@@ -3,11 +3,12 @@
         <div class="col-12 col-sm-9 col-lg-7 col-xl-5 p-2">
             <div class="card border-0 bg-darken shadow" style="border-radius: 20px;">
                 <div class="card-body p-4">
-                    <form class="text-white">
+                    <form (ngSubmit)="create()" [formGroup]="form" class="text-white">
                         <div class="row">
                             <div class="col-12 py-2">
                                 <label for="name" class="custom-field outlined">
                                     <input
+                                        formControlName="name"
                                         autocomplete="off"
                                         class="text-white"
                                         data-type="name"
@@ -23,12 +24,13 @@
                             <div class="col-12 py-2">
                                 <label for="picture" class="custom-field outlined">
                                     <input
-                                        type="url"
-                                        autocomplete="off"
+                                        formControlName="picture"
                                         class="text-white"
+                                        autocomplete="off"
                                         data-type="name"
                                         name="picture"
                                         id="picture"
+                                        type="url"
                                         autofocus
                                         required
                                     >
@@ -39,19 +41,19 @@
                             <div class="col-12 col-md-6 py-2">
                                 <label for="category" class="custom-field outlined">
                                     <select
-                                        type="url"
+                                        type="number"
+                                        formControlName="categoriesId"
                                         autocomplete="off"
                                         class="text-white"
                                         data-type="name"
                                         name="category"
                                         id="category"
-                                        autofocus
                                         required
                                     >
                                         <option value="" class="bg-darken">Option 1</option>
-                                        <option value="" class="bg-darken">Option 2</option>
-                                        <option value="" class="bg-darken">Option 3</option>
-                                        <option value="" class="bg-darken">Option 4</option>
+                                        <option value="1" class="bg-darken">Option 2</option>
+                                        <option value="2" class="bg-darken">Option 3</option>
+                                        <option value="3" class="bg-darken">Option 4</option>
                                     </select>
                                     <small class="placeholder bg-darken">Seleccione una categoria</small>
                                 </label>
@@ -60,10 +62,11 @@
                             <div class="col-12 col-md-6 py-2">
                                 <label for="price" class="custom-field outlined">
                                     <input
-                                        type="number"
+                                        formControlName="price"
                                         autocomplete="off"
                                         class="text-white"
                                         data-type="name"
+                                        type="number"
                                         name="price"
                                         id="price"
                                         required
@@ -75,6 +78,7 @@
                             <div class="col-12 py-2">
                                 <label for="name" class="custom-field outlined">
                                     <textarea
+                                        formControlName="description"
                                         autocomplete="off"
                                         class="text-white"
                                         data-type="name"
@@ -91,11 +95,23 @@
                         <div class="d-flex align-items-center pt-3">
                             <span class="spacer"></span>
                             <button
+                                type="button"
                                 routerLink="/products"
                                 class="btn text-purple mx-2"
                             >Cancelar</button>
                             <button
-                                class="btn bg-purple border-0 shadow py-2 px-3 rounded-pill mx-2"
+                                type="submit"
+                                [disabled]="!form.valid"
+                                class="
+                                    rounded-pill
+                                    bg-purple
+                                    border-0
+                                    shadow
+                                    py-2
+                                    px-3
+                                    mx-2
+                                    btn
+                                "
                             >Ingresar producto</button>
                         </div>
                     </form>
