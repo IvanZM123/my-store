@@ -3,52 +3,62 @@
     "categories": [
         {
             "id": 1,
-            "name": "Computadoras de escritorio",
+            "name": "PC",
+            "logo": "https://image.flaticon.com/icons/png/512/977/977250.png",
             "color": "success"
         },
         {
             "id": 2,
             "name": "Laptops",
+            "logo": "https://image.flaticon.com/icons/png/512/123/123400.png",
             "color": "primary"
         },
         {
             "id": 3,
             "name": "Smart Tvs",
+            "logo": "https://image.flaticon.com/icons/png/512/4693/4693334.png",
             "color": "purple"
         },
         {
             "id": 4,
             "name": "Smartphones",
+            "logo": "https://image.flaticon.com/icons/png/512/186/186239.png",
             "color": "grey"
         },
         {
             "id": 5,
             "name": "Teclados",
+            "logo": "https://image.flaticon.com/icons/png/512/595/595550.png",
             "color": "pink"
         },
         {
             "id": 6,
             "name": "Audifonos",
+            "logo": "https://image.flaticon.com/icons/png/512/3791/3791461.png",
             "color": "danger"
         },
         {
             "id": 7,
             "name": "Sofas",
+            "logo": "https://image.flaticon.com/icons/png/512/2148/2148967.png",
             "color": "brown"
         },
         {
             "id": 8,
             "name": "Tablets",
+            "logo": "https://image.flaticon.com/icons/png/512/2972/2972178.png",
             "color": "info"
         },
         {
             "id": 9,
             "name": "Mouse",
+            "logo": "https://image.flaticon.com/icons/png/512/815/815703.png",
             "color": "orange"
         },
         {
             "id": 10,
             "name": "Lamparas de noche",
+            "logo": "https://image.flaticon.com/icons/png/512/1863/1863183.png",
             "color": "aqua"
         }
     ],

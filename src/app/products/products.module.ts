@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { ProductsRoutingModule } from './products-routing.module';
 
@@ -15,7 +16,8 @@ import { AddProductPageComponent } from './pages/add-product-page/add-product-pa
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    CarouselModule
   ]
 })
-export class ProductsModule { }
+export class ProductsModule {}

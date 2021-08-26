@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
+import { Category } from './category.service';
 
 export interface Product {
   id: string;
@@ -11,6 +12,7 @@ export interface Product {
   price: number;
   picture: string;
   categoryId: number;
+  categories: Category;
 }
 
 @Injectable({
