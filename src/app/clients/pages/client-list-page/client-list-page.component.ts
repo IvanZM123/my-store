@@ -21,6 +21,6 @@ export class ClientListPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.clients$ = this.store.select(selectAllClients);
-    this.store.dispatch(StartClientList());
+    this.store.dispatch(StartClientList({}));
   }
 }

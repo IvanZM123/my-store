@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { Params } from "../../services/BasicServiceCRUD";
 
 import { Client } from "../../services/clients/clients.service";
 
@@ -23,7 +24,8 @@ export const SuccessClientGet = createAction(
 );
 
 export const StartClientList = createAction(
-    "[Clients] Start Client List"
+    "[Clients] Start Client List",
+    props<{ params?: Params }>()
 );
 
 export const SuccessClientList = createAction(

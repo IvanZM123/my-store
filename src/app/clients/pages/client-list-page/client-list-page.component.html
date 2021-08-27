@@ -6,5 +6,8 @@
             class="btn bg-purple text-white rounded-pill border-0"
         >Nuevo cliente</button>
     </div>
-    <app-client-table [clients]="clients$ | async"></app-client-table>
+    <app-client-table
+        class="shadow"
+        [clients]="clients$ | async"
+    ></app-client-table>
 </div>

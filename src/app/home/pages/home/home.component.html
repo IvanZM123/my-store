@@ -1,7 +1,42 @@
 <div class="container-fluid">
-    <div class="row justify-content-xl-center">
-        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-3" *ngFor="let item of items">
-            <app-item-card [item]="item"></app-item-card>
+    <section>
+        <div class="row justify-content-xl-center">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-3" *ngFor="let item of items">
+                <app-item-card [item]="item"></app-item-card>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <div class="row">
+            <div class="col-12 col-lg-8 p-3">
+                <div class="card border-0 bg-darken rounded-20">
+                    <div class="card-header border-0 bg-darken pt-4 pb-3 rounded-20">
+                        <div class="d-flex">
+                            <i class='bx bxs-group' style="font-size: 20px;"></i>
+                            <span class="ms-3">Lista de usuarios</span>
+                        </div>
+                    </div>
+                    <app-client-table class="shadow" [clients]="clients$ | async"></app-client-table>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 p-3">
+                <div class="card border-0 bg-darken shadow rounded-20">
+                    <div class="card-header border-0 bg-darken pt-4 pb-0 rounded-20">
+                        <div class="d-flex">
+                            <i class='bx bxs-group' style="font-size: 20px;"></i>
+                            <span class="ms-3">Ultimos pedidos</span>
+                        </div>
+                    </div>
+                    <div class="card-body rounded-20">
+                        <div class="py-3" *ngFor="let order of orders$ | async">
+                            <app-order-sticker
+                                [order]="order"
+                            ></app-order-sticker>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

@@ -36,7 +36,7 @@ export class ClientEffects {
 
     list$ = createEffect(() => this.actions$.pipe(
         ofType(actions.StartClientList),
-        mergeMap(() => this.clientService.list().pipe(
+        mergeMap(({ params }) => this.clientService.list(params).pipe(
             map(clients => actions.SuccessClientList({ clients })),
             catchError(error => of(actions.ClientError({ error })))
         ))

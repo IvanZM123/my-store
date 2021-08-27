@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
+import { GeneralComponentModule } from '../core/shared/general-component.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    GeneralComponentModule
   ]
 })
 export class HomeModule {}

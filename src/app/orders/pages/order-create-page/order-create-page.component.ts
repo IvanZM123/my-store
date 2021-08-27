@@ -57,7 +57,7 @@ export class OrderCreatePageComponent implements OnInit {
       map(name => name ? this.filterProducts(name) : this.products.slice())
     );
 
-    this.store.dispatch(StartClientList());
+    this.store.dispatch(StartClientList({}));
     this.store.dispatch(StartProductList({}));
   }
 

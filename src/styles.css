@@ -12,6 +12,9 @@ body {
     cursor: pointer;
     transition: .2s ease;
 }
+.rounded-20 {
+    border-radius: 20px !important;
+}
 .column-table:hover {
     background: #111111;
 }
