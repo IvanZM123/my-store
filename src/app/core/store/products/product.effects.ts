@@ -34,6 +34,17 @@ export class ProductEffects {
         ))
     ));
 
+    get$ = createEffect(() => this.actions$.pipe(
+        ofType(actions.StartProductGet),
+        mergeMap((({ productId, params }) =>
+                this.productService.get(productId, params).pipe(
+                    map(product => actions.SuccessProductGet({ product })),
+                    catchError(error => of(actions.ProductError({ error })))
+                )
+            )
+        )
+    ))
+
     constructor(
         private actions$: Actions,
         private notifier: Notifier,

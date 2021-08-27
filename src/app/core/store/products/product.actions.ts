@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Params } from "../../services/BasicServiceCRUD";
+import { Id, Params } from "../../services/BasicServiceCRUD";
 import { Product } from "../../services/products/product.service";
 
 export const StartProductCreate = createAction(
@@ -20,6 +20,16 @@ export const StartProductList = createAction(
 export const SuccessProductList = createAction(
     "[Products] Success Product List",
     props<{ products: Array<Product> }>()
+);
+
+export const StartProductGet = createAction(
+    "[Products] Start Product Get",
+    props<{ productId: Id; params?: Params }>()
+);
+
+export const SuccessProductGet = createAction(
+    "[Products] Success Product Get",
+    props<{ product: Product }>()
 );
 
 export const ProductError = createAction(

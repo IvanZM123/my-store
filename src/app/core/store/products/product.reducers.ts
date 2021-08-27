@@ -1,7 +1,12 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
 import { createReducer, on, Action } from "@ngrx/store";
 
-import * as actions from "./product.actions";
+import {
+    SuccessProductCreate,
+    SuccessProductGet,
+    SuccessProductList,
+    ProductError
+} from "./product.actions";
 
 import { Product } from "../../services/products/product.service";
 
@@ -16,15 +21,19 @@ export const initialProductState = productAdapter.getInitialState({
 });
 
 export const _productReducer = createReducer(initialProductState,
-    on(actions.SuccessProductList, (state, { products }) =>
+    on(SuccessProductList, (state, { products }) =>
         productAdapter.addMany(products, { ...state, error: null })
     ),
 
-    on(actions.SuccessProductCreate, (state, { product }) =>
+    on(SuccessProductCreate, (state, { product }) =>
         productAdapter.addOne(product, { ...state, error: null })
     ),
 
-    on(actions.ProductError, (state, { error }) => ({ ...state, error }))
+    on(SuccessProductGet, (state, { product }) =>
+        productAdapter.addOne(product, { ...state, error: null })
+    ),
+
+    on(ProductError, (state, { error }) => ({ ...state, error }))
 );
 
 export function productReducer(
