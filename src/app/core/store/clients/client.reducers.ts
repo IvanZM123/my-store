@@ -1,7 +1,7 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
 import { createReducer, on, Action } from "@ngrx/store";
 
-import { ClientError, SuccessClientList } from "./client.actions";
+import { ClientError, SuccessClientGet, SuccessClientList } from "./client.actions";
 
 import { Client } from "../../../core/services/clients/clients.service";
 
@@ -18,6 +18,10 @@ export const initialClientState = clientAdapter.getInitialState({
 const _clientReducer = createReducer(initialClientState,
     on(SuccessClientList, (state, { clients }) =>
         clientAdapter.addMany(clients, { ...state, error: null })
+    ),
+
+    on(SuccessClientGet, (state, { client }) =>
+        clientAdapter.addOne(client, { ...state, error: null })
     ),
 
     on(ClientError, (state, { error }) => ({ ...state, error }))

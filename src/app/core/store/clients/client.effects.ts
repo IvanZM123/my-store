@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, mergeMap, tap } from "rxjs/operators";
+import { catchError, map, mergeAll, mergeMap, tap } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { of } from "rxjs";
 
@@ -22,6 +22,14 @@ export class ClientEffects {
                 color: "success"
             })),
             tap(() => this.router.navigate(["clients"])),
+            catchError(error => of(actions.ClientError({ error })))
+        ))
+    ));
+
+    get$ = createEffect(() => this.actions$.pipe(
+        ofType(actions.StartClientGet),
+        mergeMap(({ clientId }) => this.clientService.get(clientId).pipe(
+            map(client => actions.SuccessClientGet({ client })),
             catchError(error => of(actions.ClientError({ error })))
         ))
     ));

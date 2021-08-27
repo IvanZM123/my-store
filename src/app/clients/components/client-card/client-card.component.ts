@@ -8,5 +8,5 @@ import { Client } from 'src/app/core/services/clients/clients.service';
   styleUrls: ['./client-card.component.css']
 })
 export class ClientCardComponent {
-  @Input() client!: Client;
+  @Input() client!: Client | null;
 }

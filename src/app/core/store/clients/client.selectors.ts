@@ -1,4 +1,4 @@
-import { createFeatureSelector, DefaultProjectorFn, MemoizedSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector, DefaultProjectorFn, MemoizedSelector } from "@ngrx/store";
 import { KeyStore } from "..";
 
 import { clientAdapter, StateClient } from "./client.reducers";
@@ -12,3 +12,8 @@ const getStateClient: MemoizedSelector<
 export const { selectAll } = clientAdapter.getSelectors(getStateClient);
 
 export const selectAllClients = selectAll;
+
+export const selectClientById = (clientId: string | number) =>
+    createSelector(getStateClient,
+        ({ entities }) => entities[clientId]
+    );

@@ -12,6 +12,16 @@ export const SuccessClientCreate = createAction(
     props<{ client: Client }>()
 );
 
+export const StartClientGet = createAction(
+    "[Clients] Start Client Get",
+    props<{ clientId: string | number }>()
+);
+
+export const SuccessClientGet = createAction(
+    "[Client] Success Client Get",
+    props<{ client: Client }>()
+);
+
 export const StartClientList = createAction(
     "[Clients] Start Client List"
 );

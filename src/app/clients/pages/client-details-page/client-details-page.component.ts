@@ -9,8 +9,10 @@ import { Store } from "src/app/core/store/index";
 
 import { StartOrderList } from 'src/app/core/store/orders/order.actions';
 import { getOrdersByClientId } from 'src/app/core/store/orders/order.selectors';
+import { selectClientById } from 'src/app/core/store/clients/client.selectors';
 
-import { Client, ClientService } from 'src/app/core/services/clients/clients.service';
+import { Client } from 'src/app/core/services/clients/clients.service';
+import { StartClientGet } from 'src/app/core/store/clients/client.actions';
 
 @Component({
   selector: 'app-client-details-page',
@@ -19,10 +21,9 @@ import { Client, ClientService } from 'src/app/core/services/clients/clients.ser
 })
 export class ClientDetailsPageComponent implements OnInit {
   orders$!: Observable<Array<Order>>;
-  client: Client | null=  null;
+  client$!: Observable<Client>;
 
   constructor(
-    private clientService: ClientService,
     private activatedRoute: ActivatedRoute,
     private store: NgrxStore<Store>
   ) {}
@@ -31,15 +32,17 @@ export class ClientDetailsPageComponent implements OnInit {
     this.activatedRoute.params.subscribe(({ clientId }) => {
       if (!clientId) throw new Error("Dont params provide");
 
-      this.clientService.get(clientId).subscribe(
-        client => this.client = client,
-        error => console.error(error)
-      );
+      this.client$ = this.store.select(
+        selectClientById(clientId)
+      ) as Observable<Client>;
 
+      
       this.orders$ = this.store.select(
         getOrdersByClientId(clientId)
       );
-
+        
+      this.store.dispatch(StartClientGet({ clientId }));
+      
       this.store.dispatch(StartOrderList({
         params: { clientsId: clientId }
       }));

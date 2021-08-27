@@ -4,12 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ClientsRoutingModule } from './clients-routing.module';
 
+import { GeneralComponentModule } from '../core/shared/general-component.module';
+
 import { ClientListPageComponent } from './pages/client-list-page/client-list-page.component';
 import { ClientDetailsPageComponent } from './pages/client-details-page/client-details-page.component';
 import { AddClientPageComponent } from './pages/add-client-page/add-client-page.component';
 import { ClientCardComponent } from './components/client-card/client-card.component';
-
-import { AngularMaterial } from '../core/material/angular-material';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import { AngularMaterial } from '../core/material/angular-material';
   imports: [
     CommonModule,
     ClientsRoutingModule,
-    AngularMaterial,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GeneralComponentModule
   ]
 })
 export class ClientsModule {}

@@ -234,6 +234,12 @@
       "clientsId": 1,
       "quantity": 1,
       "id": 5
+    },
+    {
+      "productsId": 5,
+      "clientsId": 6,
+      "quantity": 1,
+      "id": 6
     }
   ]
 }
