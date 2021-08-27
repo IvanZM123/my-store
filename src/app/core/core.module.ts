@@ -8,10 +8,12 @@ import { effects, reducers } from './store';
 import { NotificationComponent } from './components/notification/notification.component';
 
 import { AngularMaterial } from "./material/angular-material";
+import { OrderStickerComponent } from './components/order-sticker/order-sticker.component';
 
 @NgModule({
   declarations: [
-    NotificationComponent
+    NotificationComponent,
+    OrderStickerComponent
   ],
   imports: [
     CommonModule,

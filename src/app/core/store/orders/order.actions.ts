@@ -13,7 +13,8 @@ export const SuccessOrderCreate = createAction(
 );
 
 export const StartOrderList = createAction(
-    "[Orders] Start Order List"
+    "[Orders] Start Order List",
+    props<{ params?: object }>()
 );
 
 export const SuccessOrderList = createAction(

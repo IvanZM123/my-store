@@ -6,10 +6,32 @@
         <div class="col-12 col-lg-8 p-3">
             <div class="card border-0 bg-darken shadow">
                 <div class="card-header border-0 bg-darken" style="border-radius: 20px;">
-                    <div class="d-flex text-purple align-items-center">
+                    <div class="d-flex align-items-center pb-3">
                         <i class='bx bxs-shopping-bag' style="font-size: 20px;"></i>
                         <h3 class="ms-3 m-0">Compras realizadas</h3>
                     </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item bg-darken border-0 py-3" *ngFor="let order of orders$ | async">
+                            <div class="d-flex align-items-center">
+                                <div class="item-list avatar rounded" style="width: 40px; height: 40px; overflow: hidden;">
+                                    <img src="{{ order.products?.picture }}" width="100%" height="100%" style="object-fit: cover;" alt="">
+                                </div>
+                                <div class="item-list-body w-100 ms-3">
+                                    <div class="d-flex w-100 item-list-title">
+                                        <p class="m-0">{{ order.products?.name }}</p>
+                                        <span class="spacer"></span>
+                                        <p class="m-0">${{ order.products?.price || 0 * order.quantity }}</p>
+                                    </div>
+                                    <div class="d-flex w-100 text-purple">
+                                        <small>{{ order.clients?.firstName }}</small>
+                                        <span class="spacer"></span>
+                                        <small>Items: {{ order.quantity }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

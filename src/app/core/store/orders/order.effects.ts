@@ -23,7 +23,7 @@ export class OrderEffects {
 
     list$ = createEffect(() => this.actions$.pipe(
         ofType(actions.StartOrderList),
-        mergeMap(() => this.orderService.list().pipe(
+        mergeMap(({ params }) => this.orderService.list(params).pipe(
             map(orders => actions.SuccessOrderList({ orders })),
             catchError(error => of(actions.OrderError({ error })))
         ))

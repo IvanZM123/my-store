@@ -24,8 +24,10 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 
-  list(): Observable<Array<Order>> {
-    const url: string = `${ this.url }?_expand=clients&_expand=products`;
+  list(params?: object): Observable<Array<Order>> {
+    const query: string = this.parseParams(params);
+    const url: string = `${ this.url }?${ query }&_expand=clients&_expand=products`;
+    console.log(url)
     return this.http.get<Array<Order>>(url);
   }
 
@@ -33,5 +35,15 @@ export class OrderService {
     return this.http.post<
       Omit<Order, "products" | "clients">
     >(this.url, data);
+  }
+
+  private parseParams(params?: object): string {
+    if (!params) return "";
+
+    const values = Object.entries(params);
+    return values.map((item, i) => {
+      const query: string = `${ item[0] }=${ item[1] }`;
+      return (values.length !== i + 1) ? `${ query }&` : query;
+    }).join("");
   }
 }

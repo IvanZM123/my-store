@@ -21,6 +21,6 @@ export class OrderlistPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.orders$ = this.store.select(selectAllOrders);
-    this.store.dispatch(StartOrderList());
+    this.store.dispatch(StartOrderList({}));
   }
 }
