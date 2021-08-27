@@ -39,6 +39,24 @@
       "phone": 23461135,
       "NIT": "0000-0000-0000-0",
       "avatar": "https://cdn-3.expansion.mx/dims4/default/2ee5781/2147483647/strip/true/crop/620x720+0+0/resize/600x697!/format/webp/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2Fmedia%2F2011%2F07%2F25%2Ftaylor1.jpg"
+    },
+    {
+      "firstName": "Chris Thomas",
+      "lastName": "Cerulli",
+      "avatar": "https://pm1.narvii.com/6340/67b3a48458dec9240064959f47439d2bd1ec9684_hq.jpg",
+      "phone": "22270654",
+      "NIT": "0000-0000-0000-0",
+      "email": "chris666@gmail.com",
+      "id": 6
+    },
+    {
+      "firstName": "Matthew James",
+      "lastName": "Tuck",
+      "avatar": "http://pm1.narvii.com/6618/c3a3796de30fe94db14632188a4cadad41464963_00.jpg",
+      "phone": "60781134",
+      "NIT": "0000-0000-0000-0",
+      "email": "matt_tuck0@gmail.com",
+      "id": 7
     }
   ],
   "categories": [

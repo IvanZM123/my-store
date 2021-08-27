@@ -21,6 +21,10 @@ export class ClientService {
 
   constructor(private http: HttpClient) {}
 
+  create(payload: Omit<Client, "id">): Observable<Client> {
+    return this.http.post<Client>(this.url, payload);
+  }
+
   list(): Observable<Array<Client>> {
     return this.http.get<Array<Client>>(this.url);
   }
