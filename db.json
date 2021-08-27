@@ -57,6 +57,15 @@
       "NIT": "0000-0000-0000-0",
       "email": "matt_tuck0@gmail.com",
       "id": 7
+    },
+    {
+      "firstName": "Brian Hugh",
+      "lastName": "Warner",
+      "avatar": "https://indiehoy.com/wp-content/uploads/2021/02/manson.jpg",
+      "phone": "26630361",
+      "NIT": "0000-0000-0000-0",
+      "email": "manson123@gmail.com",
+      "id": 8
     }
   ],
   "categories": [

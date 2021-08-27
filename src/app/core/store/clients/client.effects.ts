@@ -1,24 +1,43 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, mergeMap } from "rxjs/operators";
+import { catchError, map, mergeMap, tap } from "rxjs/operators";
+import { Router } from "@angular/router";
 import { of } from "rxjs";
 
 import * as actions from "./client.actions";
+
+import { Notifier } from "../../helpers/notifier";
 
 import { ClientService } from "../../services/clients/clients.service";
 
 @Injectable()
 export class ClientEffects {
+    create$ = createEffect(() => this.actions$.pipe(
+        ofType(actions.StartClientCreate),
+        mergeMap(({ payload }) => this.clientService.create(payload).pipe(
+            map(client => actions.SuccessClientCreate({ client })),
+            tap(({ client }) => this.notifier.showNotification({
+                icon: "check-circle",
+                message: `${ client.firstName } se agrego a la lista de clientes`,
+                color: "success"
+            })),
+            tap(() => this.router.navigate(["clients"])),
+            catchError(error => of(actions.ClientError({ error })))
+        ))
+    ));
+
     list$ = createEffect(() => this.actions$.pipe(
         ofType(actions.StartClientList),
         mergeMap(() => this.clientService.list().pipe(
-            map(clients => actions.SuccessClientAction({ clients })),
+            map(clients => actions.SuccessClientList({ clients })),
             catchError(error => of(actions.ClientError({ error })))
         ))
     ));
 
     constructor(
         private actions$: Actions,
-        private clientService: ClientService
+        private clientService: ClientService,
+        private notifier: Notifier,
+        private router: Router
     ) {}
 }

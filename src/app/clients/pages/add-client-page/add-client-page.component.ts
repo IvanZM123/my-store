@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ClientService } from 'src/app/core/services/clients/clients.service';
+
+import { Store as NgrxStore } from "@ngrx/store";
+import { Store } from "src/app/core/store/index";
+
+import { StartClientCreate } from 'src/app/core/store/clients/client.actions';
 
 @Component({
   selector: 'app-add-client-page',
@@ -13,7 +17,7 @@ export class AddClientPageComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private clientService: ClientService
+    private store: NgrxStore<Store>
   ) {}
 
   ngOnInit(): void {
@@ -34,13 +38,11 @@ export class AddClientPageComponent implements OnInit {
     const { value: personalData, valid: isValidPersonal } = this.personalDataForm;
     const { value: additionalData, valid: isValidAdditional } = this.additionalDataForm;
 
-    if (isValidPersonal && isValidAdditional) {
-      this.clientService.create({
-        ...personalData,
-        ...additionalData
-      }).subscribe(
-        client => console.log(client)
-      );
-    }
+    if (!isValidPersonal || !isValidAdditional) throw new Error("Invalid form.");
+
+    const action = StartClientCreate({
+      payload: { ...personalData, ...additionalData }
+    });
+    this.store.dispatch(action);
   }
 }
