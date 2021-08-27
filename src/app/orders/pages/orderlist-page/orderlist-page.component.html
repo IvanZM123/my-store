@@ -1,1 +1,35 @@
-<p>orderlist-page works!</p>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table bg-darken text-white shadow" style="border-radius: 20px;">
+            <thead>
+                <tr>
+                    <th scope="col" class="p-3">#</th>
+                    <th scope="col" class="p-3">Nombre</th>
+                    <th scope="col" class="p-3">Producto</th>
+                    <th scope="col" class="p-3">Cantidad</th>
+                    <th scope="col" class="p-3">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <th scope="row" class="border-0 p-3">{{ order.id }}</th>
+                    <td class="border-0 p-3">
+                        <div class="d-flex align-items-center">
+                            <img
+                                src="{{ order.clients.avatar }}"
+                                width="30px"
+                                height="30px"
+                                class="rounded-circle"
+                                alt="Avatar"
+                            >
+                            <span class="ms-3">{{ order.clients.firstName }}</span>
+                        </div>
+                    </td>
+                    <td class="border-0 p-3">{{ order.products.name }}</td>
+                    <td class="border-0 p-3">{{ order.quantity }}</td>
+                    <td class="border-0 p-3">${{ order.quantity * order.products.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

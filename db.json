@@ -204,5 +204,12 @@
       "id": 9
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": 1,
+      "productsId": 1,
+      "clientsId": 1,
+      "quantity": 1
+    }
+  ]
 }
