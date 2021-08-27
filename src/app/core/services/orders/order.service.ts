@@ -27,7 +27,6 @@ export class OrderService {
   list(params?: object): Observable<Array<Order>> {
     const query: string = this.parseParams(params);
     const url: string = `${ this.url }?${ query }&_expand=clients&_expand=products`;
-    console.log(url)
     return this.http.get<Array<Order>>(url);
   }
 

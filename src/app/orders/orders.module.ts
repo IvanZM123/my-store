@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { OrdersRoutingModule } from './orders-routing.module';
 
-import { AngularMaterial } from '../core/material/angular-material';
+import { GeneralComponentModule } from '../core/shared/general-component.module';
 
 import { OrderlistPageComponent } from './pages/orderlist-page/orderlist-page.component';
 import { OrderCreatePageComponent } from './pages/order-create-page/order-create-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     OrdersRoutingModule,
-    AngularMaterial,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GeneralComponentModule
   ]
 })
 export class OrdersModule {}
