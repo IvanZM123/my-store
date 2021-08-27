@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { Client, ClientService } from 'src/app/core/services/clients/clients.service';
+import { Store as NgrxStore } from "@ngrx/store";
+import { Store } from "src/app/core/store/index";
+
+import { StartClientList } from 'src/app/core/store/clients/client.actions';
+import { selectAllClients } from 'src/app/core/store/clients/client.selectors';
+
+import { Client } from 'src/app/core/services/clients/clients.service';
 
 @Component({
   selector: 'app-client-list-page',
@@ -8,13 +15,12 @@ import { Client, ClientService } from 'src/app/core/services/clients/clients.ser
   styleUrls: ['./client-list-page.component.css']
 })
 export class ClientListPageComponent implements OnInit {
-  clients: Array<Client> = [];
+  clients$!: Observable<Array<Client>>;
 
-  constructor(private clientService: ClientService) {}
+  constructor(private store: NgrxStore<Store>) {}
 
   ngOnInit(): void {
-    this.clientService.list().subscribe(
-      clients => this.clients = clients
-    );
+    this.clients$ = this.store.select(selectAllClients);
+    this.store.dispatch(StartClientList());
   }
 }

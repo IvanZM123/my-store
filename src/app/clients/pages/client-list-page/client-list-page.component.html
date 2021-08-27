@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <tr
-                    *ngFor="let client of clients"
+                    *ngFor="let client of clients$ | async"
                     routerLink="/clients/show/{{ client.id }}"
                     class="item-client"
                 >
