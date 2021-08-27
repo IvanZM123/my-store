@@ -1,1 +1,92 @@
-<p>add-client-page works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-5 p-2">
+            <div class="card border-0 bg-darken shadow">
+                <div class="card-body">
+                    <mat-horizontal-stepper class="bg-darken" [linear]="true">
+                        <mat-step [stepControl]="personalDataForm">
+                            <form [formGroup]="personalDataForm">
+                                <ng-template matStepLabel>Datos Personales</ng-template>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="firtName" class="custom-field outlined">
+                                            <input formControlName="firstName" autocomplete="off" class="text-white"
+                                                data-type="name" name="firtName" id="firtName" autofocus required>
+                                            <small class="placeholder bg-darken">Nombres</small>
+                                        </label>
+                                        <small class="form-text text-white">Ingrese el nombre del cliente</small>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="lastName" class="custom-field outlined">
+                                            <input formControlName="lastName" autocomplete="off" class="text-white"
+                                                data-type="name" name="lastName" id="lastName" required>
+                                            <small class="placeholder bg-darken">Apellidos</small>
+                                        </label>
+                                        <small class="form-text text-white">Ingrese los apellidos del cliente</small>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="picture" class="custom-field outlined">
+                                            <input formControlName="picture" autocomplete="off" class="text-white"
+                                                data-type="name" name="picture" id="picture" required>
+                                            <small class="placeholder bg-darken">URL de la fotografia</small>
+                                        </label>
+                                        <small class="form-text text-white">Ingrese las URL de la foto del
+                                            cliente</small>
+                                    </div>
+
+                                    <div class="d-flex w-100 pt-3">
+                                        <span class="spacer"></span>
+                                        <button [disabled]="personalDataForm.invalid"
+                                            class="btn bg-purple border-0 shadow" matStepperNext>Siguiente</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </mat-step>
+
+                        <mat-step [stepControl]="additionalDataForm">
+                            <form [formGroup]="additionalDataForm">
+                                <ng-template matStepLabel>Datos Adicionales</ng-template>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="phone" class="custom-field outlined">
+                                            <input formControlName="phone" autocomplete="off" class="text-white"
+                                                data-type="name" name="phone" id="phone" required>
+                                            <small class="placeholder bg-darken">Telefono</small>
+                                        </label>
+                                        <small class="form-text text-white">Ingrese el telefono del cliente</small>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="NIT" class="custom-field outlined">
+                                            <input formControlName="NIT" autocomplete="off" class="text-white"
+                                                data-type="name" name="NIT" id="NIT" required>
+                                            <small class="placeholder bg-darken">NIT</small>
+                                        </label>
+                                        <small class="form-text text-white">Ingrese el NIT del cliente</small>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="custom-field outlined">
+                                            <input formControlName="email" autocomplete="off" class="text-white"
+                                                data-type="name" name="email" id="email" required>
+                                            <small class="placeholder bg-darken">Correo electronico</small>
+                                        </label>
+                                        <small class="form-text text-white">Ingrese el correo electronico del
+                                            cliente</small>
+                                    </div>
+
+                                    <div class="d-flex align-items-center">
+                                        <span class="spacer"></span>
+                                        <button matStepperPrevious class="btn text-purple border-0 mx-2">Atras</button>
+                                        <button (click)="create()" [disabled]="additionalDataForm.invalid"
+                                            class="btn border-0 bg-purple text-white mx-2 shadow">Ingresar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </mat-step>
+                    </mat-horizontal-stepper>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
