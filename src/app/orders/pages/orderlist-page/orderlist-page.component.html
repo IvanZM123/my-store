@@ -13,6 +13,7 @@
                     <th scope="col" class="p-3">#</th>
                     <th scope="col" class="p-3">Nombre</th>
                     <th scope="col" class="p-3">Producto</th>
+                    <th scope="col" class="p-3">Fecha</th>
                     <th scope="col" class="p-3">Cantidad</th>
                     <th scope="col" class="p-3">Total</th>
                 </tr>
@@ -33,6 +34,7 @@
                         </div>
                     </td>
                     <td class="border-0 p-3">{{ order.products?.name }}</td>
+                    <td class="border-0 p-3">{{ order.createdAt | date }}</td>
                     <td class="border-0 p-3">{{ order.quantity }}</td>
                     <td class="border-0 p-3">${{ order.quantity * (order.products?.price || 0) }}</td>
                 </tr>

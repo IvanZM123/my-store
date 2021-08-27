@@ -206,40 +206,20 @@
   ],
   "orders": [
     {
-      "id": 1,
-      "productsId": 1,
-      "clientsId": 1,
-      "quantity": 1
-    },
-    {
       "productsId": 2,
-      "clientsId": 8,
-      "quantity": 2,
-      "id": 2
+      "clientsId": 1,
+      "quantity": 1,
+      "createdAt": "2021-08-27T18:24:48.097Z",
+      "updatedAt": "2021-08-27T18:24:48.097Z",
+      "id": 1
     },
     {
-      "productsId": 4,
+      "productsId": 9,
       "clientsId": 5,
-      "quantity": 1,
-      "id": 3
-    },
-    {
-      "productsId": 8,
-      "clientsId": 7,
-      "quantity": 1,
-      "id": 4
-    },
-    {
-      "productsId": 2,
-      "clientsId": 1,
-      "quantity": 1,
-      "id": 5
-    },
-    {
-      "productsId": 5,
-      "clientsId": 6,
-      "quantity": 1,
-      "id": 6
+      "quantity": 2,
+      "createdAt": "2021-08-27T18:59:18.882Z",
+      "updatedAt": "2021-08-27T18:59:18.882Z",
+      "id": 2
     }
   ]
 }
