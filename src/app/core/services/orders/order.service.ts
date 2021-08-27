@@ -12,8 +12,8 @@ export interface Order {
   quantity: number;
   productsId: number;
   clientsId: number;
-  products: Product;
-  clients: Client;
+  products?: Product;
+  clients?: Client;
 }
 
 @Injectable({
@@ -27,5 +27,13 @@ export class OrderService {
   list(): Observable<Array<Order>> {
     const url: string = `${ this.url }?_expand=clients&_expand=products`;
     return this.http.get<Array<Order>>(url);
+  }
+
+  create(
+    data: Omit<Order, "id" | "categories" | "products">
+  ): Observable<Omit<Order, "categories" | "products">> {
+    return this.http.post<
+      Omit<Order, "categories" | "products">
+    >(this.url, data);
   }
 }

@@ -1,6 +1,9 @@
 * {
     font-family: 'Poppins', sans-serifs;
 }
+h1, h2, h3, h4, h5, h6, p, span, small {
+    font-family: 'Poppins', sans-serifs !important;
+}
 body {
     background-color: #121212;
     color: white;
@@ -208,3 +211,6 @@ body {
 .custom-field.success select:focus + .placeholder {
     color: #009432;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

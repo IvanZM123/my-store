@@ -210,6 +210,12 @@
       "productsId": 1,
       "clientsId": 1,
       "quantity": 1
+    },
+    {
+      "productsId": 2,
+      "clientsId": 8,
+      "quantity": 2,
+      "id": 2
     }
   ]
 }

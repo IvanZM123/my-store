@@ -1,4 +1,11 @@
 <div class="container-fluid">
+    <div class="pb-4 d-flex">
+        <span class="spacer"></span>
+        <button
+            class="btn bg-purple rounded-pill border-0 py-2 px-3"
+            routerLink="/orders/create"
+        >Crear orden</button>
+    </div>
     <div class="table-responsive">
         <table class="table bg-darken text-white shadow" style="border-radius: 20px;">
             <thead>
@@ -16,18 +23,18 @@
                     <td class="border-0 p-3">
                         <div class="d-flex align-items-center">
                             <img
-                                src="{{ order.clients.avatar }}"
+                                src="{{ order.clients?.avatar }}"
                                 width="30px"
                                 height="30px"
                                 class="rounded-circle"
                                 alt="Avatar"
                             >
-                            <span class="ms-3">{{ order.clients.firstName }}</span>
+                            <span class="ms-3">{{ order.clients?.firstName }}</span>
                         </div>
                     </td>
-                    <td class="border-0 p-3">{{ order.products.name }}</td>
+                    <td class="border-0 p-3">{{ order.products?.name }}</td>
                     <td class="border-0 p-3">{{ order.quantity }}</td>
-                    <td class="border-0 p-3">${{ order.quantity * order.products.price }}</td>
+                    <td class="border-0 p-3">${{ order.quantity * (order.products?.price || 0) }}</td>
                 </tr>
             </tbody>
         </table>

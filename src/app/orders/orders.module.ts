@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { OrdersRoutingModule } from './orders-routing.module';
 
+import { AngularMaterial } from '../core/material/angular-material';
+
 import { OrderlistPageComponent } from './pages/orderlist-page/orderlist-page.component';
 import { OrderCreatePageComponent } from './pages/order-create-page/order-create-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,9 @@ import { OrderCreatePageComponent } from './pages/order-create-page/order-create
   ],
   imports: [
     CommonModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    AngularMaterial,
+    ReactiveFormsModule
   ]
 })
-export class OrdersModule { }
+export class OrdersModule {}
