@@ -28,7 +28,7 @@ export class ProductEffects {
 
     list$ = createEffect(() => this.actions$.pipe(
         ofType(actions.StartProductList),
-        mergeMap(() => this.productService.list().pipe(
+        mergeMap(({ params }) => this.productService.list(params).pipe(
             map(products => actions.SuccessProductList({ products })),
             catchError(error => of(actions.ProductError({ error })))
         ))

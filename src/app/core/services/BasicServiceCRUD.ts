@@ -7,16 +7,13 @@ export interface Params {
     [key: string]: any
 }
 
+export type Id = string | number;
+
 export abstract class BasicServiceCRUD<T> {
     protected readonly url!: string;
 
     constructor(protected http: HttpClient) {}
-
-    list(params?: Params): Observable<Array<T>> {
-        const query: string = parseParams(params);
-        return this.http.get<Array<T>>(`${ this.url }?${ query }`);
-    }
-
+    
     create(data: Partial<T>): Observable<T> {
         const payload: Partial<T> = {
             ...data,
@@ -25,5 +22,16 @@ export abstract class BasicServiceCRUD<T> {
         }
 
         return this.http.post<T>(this.url, payload);
+    }
+
+    list(params?: Params): Observable<Array<T>> {
+        const query: string = parseParams(params);
+        return this.http.get<Array<T>>(`${ this.url }?${ query }`);
+    }
+
+    get(id: Id, params?: Params): Observable<T> {
+        const query: string = parseParams(params);
+        const url: string = `${ this.url }/${ id }?${ query }`;
+        return this.http.get<T>(url)
     }
 }

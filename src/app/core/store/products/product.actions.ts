@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { Params } from "../../services/BasicServiceCRUD";
 import { Product } from "../../services/products/product.service";
 
 export const StartProductCreate = createAction(
@@ -12,7 +13,8 @@ export const SuccessProductCreate = createAction(
 );
 
 export const StartProductList = createAction(
-    "[Products] Start Product List"
+    "[Products] Start Product List",
+    props<{ params?: Params }>()
 );
 
 export const SuccessProductList = createAction(

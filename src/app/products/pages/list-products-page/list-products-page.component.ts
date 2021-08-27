@@ -55,6 +55,8 @@ export class ListProductsPageComponent implements OnInit {
     );
 
     this.products$ = this.store.select(selectAllProducts);
-    this.store.dispatch(StartProductList());
+    this.store.dispatch(StartProductList({
+      params: { _expand: "categories" }
+    }));
   }
 }

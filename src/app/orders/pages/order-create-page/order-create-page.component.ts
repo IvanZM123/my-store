@@ -58,7 +58,7 @@ export class OrderCreatePageComponent implements OnInit {
     );
 
     this.store.dispatch(StartClientList());
-    this.store.dispatch(StartProductList());
+    this.store.dispatch(StartProductList({}));
   }
 
   filterClients(name: string): Array<Client> {
