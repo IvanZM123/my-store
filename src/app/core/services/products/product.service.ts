@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 
 import { Category } from './category.service';
-import { BasicServiceCRUD } from '../BasicServiceCRUD';
+import { BasicServiceCRUD, Id } from '../BasicServiceCRUD';
 
 export interface Product {
   id: string;
@@ -12,7 +12,7 @@ export interface Product {
   description: string;
   price: number;
   picture: string;
-  categoryId: number;
+  categoriesId: Id;
   categories: Category;
 }
 

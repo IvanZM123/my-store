@@ -202,6 +202,16 @@
       "price": 355.55,
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
       "id": 9
+    },
+    {
+      "name": "Apple",
+      "picture": "https://peru21.pe/resizer/I6a3j6IXORBAHUjhPz1zGvBB6OQ=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/FAH7AXOGKRFZZOSTWK3G47AG7I.jpg",
+      "categoriesId": "2",
+      "price": 1500.99,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "createdAt": "2021-08-27T21:07:17.759Z",
+      "updatedAt": "2021-08-27T21:07:17.759Z",
+      "id": 10
     }
   ],
   "orders": [
@@ -220,6 +230,14 @@
       "createdAt": "2021-08-27T18:59:18.882Z",
       "updatedAt": "2021-08-27T18:59:18.882Z",
       "id": 2
+    },
+    {
+      "productsId": 3,
+      "clientsId": 1,
+      "quantity": 1,
+      "createdAt": "2021-08-27T21:33:46.569Z",
+      "updatedAt": "2021-08-27T21:33:46.569Z",
+      "id": 3
     }
   ]
 }

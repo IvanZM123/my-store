@@ -5,19 +5,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProductsRoutingModule } from './products-routing.module';
 
+import { AngularMaterial } from '../core/material/angular-material';
+
 import { ListProductsPageComponent } from './pages/list-products-page/list-products-page.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 import { AddProductPageComponent } from './pages/add-product-page/add-product-page.component';
 
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { AngularMaterial } from '../core/material/angular-material';
+import { ProductStickerComponent } from './components/product-sticker/product-sticker.component';
 
 @NgModule({
   declarations: [
     ListProductsPageComponent,
     ProductDetailsPageComponent,
     AddProductPageComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductStickerComponent
   ],
   imports: [
     CommonModule,
