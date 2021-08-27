@@ -11,7 +11,7 @@ import { AngularMaterial } from "./material/angular-material";
 
 @NgModule({
   declarations: [
-    NotificationComponent
+    NotificationComponent,
   ],
   imports: [
     CommonModule,

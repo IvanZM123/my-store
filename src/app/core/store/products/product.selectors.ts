@@ -20,6 +20,11 @@ export const { selectAll } = productAdapter.getSelectors(getStateProduct);
 
 export const selectAllProducts = selectAll;
 
+export const selectTotalProducts = createSelector(
+    getStateProduct,
+    ({ entities }) => Object.keys(entities).length
+);
+
 export const selectProductByCategoryId = (categoryId: Id) =>
     createSelector(getStateProduct,
         ({ entities }) => Object.keys(entities)
