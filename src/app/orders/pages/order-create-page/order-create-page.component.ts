@@ -5,17 +5,17 @@ import { Observable } from 'rxjs';
 
 import { Client } from 'src/app/core/services/clients/clients.service';
 import { Product } from 'src/app/core/services/products/product.service';
+import { Order } from 'src/app/core/services/orders/order.service';
 
 import { Store as NgrxStore } from "@ngrx/store";
 import { Store } from "src/app/core/store/index";
 
 import { StartClientList } from 'src/app/core/store/clients/client.actions';
 import { StartProductList } from 'src/app/core/store/products/product.actions';
+import { StartOrderCreate } from 'src/app/core/store/orders/order.actions';
 
 import { selectAllClients } from 'src/app/core/store/clients/client.selectors';
 import { selectAllProducts } from 'src/app/core/store/products/product.selectors';
-
-import { OrderService } from 'src/app/core/services/orders/order.service';
 
 @Component({
   selector: 'app-order-create-page',
@@ -34,10 +34,7 @@ export class OrderCreatePageComponent implements OnInit {
   filteredClients$!: Observable<Array<Client>> | undefined;
   filteredProducts$!: Observable<Array<Product>> | undefined;
 
-  constructor(
-    private store: NgrxStore<Store>,
-    private orderService: OrderService
-  ) {}
+  constructor(private store: NgrxStore<Store>) {}
 
   ngOnInit(): void {
     this.store.select(selectAllClients).subscribe(
@@ -91,13 +88,15 @@ export class OrderCreatePageComponent implements OnInit {
   }
 
   create(): void {
-    if (this.form.invalid) throw new Error("");
+    if (this.form.invalid) throw new Error("Invalid form");
 
-    this.orderService.create({
+    const payload: Partial<Order> = {
       productsId: this.form.value.product.id,
       clientsId: this.form.value.client.id,
       quantity: this.form.value.quantity
-    })
-    .subscribe(console.log)
+    }
+    this.store.dispatch(
+      StartOrderCreate({ payload })
+    );
   }
 }

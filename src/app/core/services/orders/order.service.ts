@@ -10,8 +10,8 @@ import { Product } from '../products/product.service';
 export interface Order {
   id: string;
   quantity: number;
-  productsId: number;
-  clientsId: number;
+  productsId: number | string;
+  clientsId: number | string;
   products?: Product;
   clients?: Client;
 }
@@ -29,11 +29,9 @@ export class OrderService {
     return this.http.get<Array<Order>>(url);
   }
 
-  create(
-    data: Omit<Order, "id" | "categories" | "products">
-  ): Observable<Omit<Order, "categories" | "products">> {
+  create(data: Partial<Order>): Observable<Omit<Order, "categories" | "products">> {
     return this.http.post<
-      Omit<Order, "categories" | "products">
+      Omit<Order, "products" | "clients">
     >(this.url, data);
   }
 }
