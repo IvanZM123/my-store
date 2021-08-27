@@ -10,14 +10,14 @@
     <section>
         <div class="row">
             <div class="col-12 col-lg-8 p-3">
-                <div class="card border-0 bg-darken rounded-20">
+                <div class="card border-0 bg-darken shadow rounded-20">
                     <div class="card-header border-0 bg-darken pt-4 pb-3 rounded-20">
                         <div class="d-flex">
                             <i class='bx bx-group' style="font-size: 20px;"></i>
                             <span class="ms-3">Lista de usuarios</span>
                         </div>
                     </div>
-                    <app-client-table class="shadow" [clients]="clients$ | async"></app-client-table>
+                    <app-client-table [clients]="clients$ | async"></app-client-table>
                 </div>
             </div>
             <div class="col-12 col-lg-4 p-3">

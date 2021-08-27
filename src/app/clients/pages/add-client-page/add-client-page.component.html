@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-5 p-2">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 p-2">
             <div class="card border-0 bg-darken shadow">
                 <div class="card-body">
                     <mat-horizontal-stepper class="bg-darken" [linear]="true">
@@ -11,8 +11,16 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="firtName" class="custom-field outlined">
-                                            <input formControlName="firstName" autocomplete="off" class="text-white"
-                                                data-type="name" name="firtName" id="firtName" autofocus required>
+                                            <input
+                                                formControlName="firstName"
+                                                autocomplete="off"
+                                                class="input-validate text-white"
+                                                data-type="name"
+                                                name="firtName"
+                                                id="firtName"
+                                                autofocus
+                                                required
+                                            >
                                             <small class="placeholder bg-darken">Nombres</small>
                                         </label>
                                         <small class="form-text text-white">Ingrese el nombre del cliente</small>

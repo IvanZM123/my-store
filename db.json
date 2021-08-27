@@ -5,6 +5,7 @@
       "firstName": "Matthew Charles",
       "lastName": "Sanders",
       "phone": 22085815,
+      "email": "shadow43@gmail.com",
       "NIT": "0000-0000-0000-0",
       "avatar": "https://pbs.twimg.com/profile_images/987751177466122241/ociHLCs3_400x400.jpg"
     },
@@ -13,6 +14,7 @@
       "firstName": "Vincent Damon",
       "lastName": "Furnier",
       "phone": 22584329,
+      "email": "furnier555@gmail.com",
       "NIT": "0000-0000-0000-0",
       "avatar": "https://www.todomusica.org/imagenes/680x380/alice_cooper.jpg"
     },
@@ -21,6 +23,7 @@
       "firstName": "James Alan",
       "lastName": "Hetfield",
       "phone": 22844267,
+      "email": "hetfield1@gmail.com",
       "NIT": "0000-0000-0000-0",
       "avatar": "https://marvin.com.mx/wp-content/uploads/2020/01/metallica-james-hetfield-exhibicion-autos.jpg"
     },
@@ -29,6 +32,7 @@
       "firstName": "Dave Scott",
       "lastName": "Munstaine",
       "phone": 22601468,
+      "email": "munstaine_dave@gmail.com",
       "NIT": "0000-0000-0000-0",
       "avatar": "https://mariskalrock.com/wp-content/uploads/2019/04/dave-mustaine-1.jpg"
     },
@@ -37,6 +41,7 @@
       "firstName": "Taylor Michel",
       "lastName": "Momsen",
       "phone": 23461135,
+      "email": "taylor5@gmail.com",
       "NIT": "0000-0000-0000-0",
       "avatar": "https://cdn-3.expansion.mx/dims4/default/2ee5781/2147483647/strip/true/crop/620x720+0+0/resize/600x697!/format/webp/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2Fmedia%2F2011%2F07%2F25%2Ftaylor1.jpg"
     },
@@ -66,6 +71,17 @@
       "NIT": "0000-0000-0000-0",
       "email": "manson123@gmail.com",
       "id": 8
+    },
+    {
+      "firstName": "Brian Francis",
+      "lastName": "Johnson",
+      "avatar": "https://mariskalrock.com/wp-content/uploads/2018/10/brian-johnson.jpg",
+      "phone": "56780122",
+      "NIT": "0000-0000-0000-0",
+      "email": "brian013@gmail.com",
+      "createdAt": "2021-08-27T23:28:55.385Z",
+      "updatedAt": "2021-08-27T23:28:55.385Z",
+      "id": 9
     }
   ],
   "categories": [
@@ -246,6 +262,22 @@
       "createdAt": "2021-08-27T23:24:48.753Z",
       "updatedAt": "2021-08-27T23:24:48.753Z",
       "id": 4
+    },
+    {
+      "productsId": 8,
+      "clientsId": 9,
+      "quantity": 1,
+      "createdAt": "2021-08-27T23:29:46.907Z",
+      "updatedAt": "2021-08-27T23:29:46.907Z",
+      "id": 5
+    },
+    {
+      "productsId": 7,
+      "clientsId": 1,
+      "quantity": 3,
+      "createdAt": "2021-08-27T23:40:11.009Z",
+      "updatedAt": "2021-08-27T23:40:11.009Z",
+      "id": 6
     }
   ]
 }
