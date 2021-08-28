@@ -4,6 +4,7 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatSelectModule } from "@angular/material/select";
 
 export const AngularMaterial = [
     MatSnackBarModule,
@@ -11,5 +12,6 @@ export const AngularMaterial = [
     MatIconModule,
     MatFormFieldModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
 ];

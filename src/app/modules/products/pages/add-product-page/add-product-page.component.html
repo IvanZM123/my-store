@@ -6,91 +6,74 @@
                     <form (ngSubmit)="create()" [formGroup]="form" class="text-white">
                         <div class="row">
                             <div class="col-12 py-2">
-                                <label for="name" class="custom-field outlined">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Nombre del producto</mat-label>
                                     <input
+                                        placeholder="Ejem: Samsung Galaxy"
                                         formControlName="name"
                                         autocomplete="off"
-                                        class="text-white"
-                                        data-type="name"
-                                        name="name"
-                                        id="name"
                                         autofocus
                                         required
+                                        matInput
                                     >
-                                    <small class="placeholder bg-darken">Nombre del producto</small>
-                                </label>
-                                <small class="form-text text-white">Escriba el nombre del producto.</small>
+                                    <mat-hint>Escribe el nombre del producto.</mat-hint>
+                                    <mat-error *ngIf="form.get('name')?.invalid">{{ getNameError() }}</mat-error>
+                                </mat-form-field>
                             </div>
                             <div class="col-12 py-2">
-                                <label for="picture" class="custom-field outlined">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>URL de la imagen</mat-label>
                                     <input
+                                        placeholder="Ejem: https://galery.com/image.png"
                                         formControlName="picture"
-                                        class="text-white"
                                         autocomplete="off"
-                                        data-type="name"
-                                        name="picture"
-                                        id="picture"
-                                        type="url"
-                                        autofocus
                                         required
+                                        matInput
                                     >
-                                    <small class="placeholder bg-darken">URL de la imagen</small>
-                                </label>
-                                <small class="form-text text-white">Ingrese la URL de la imagen del producto</small>
+                                    <mat-hint>Ingrese la URL de la imagen del producto.</mat-hint>
+                                    <mat-error *ngIf="form.get('picture')?.invalid">{{ getPictureError() }}</mat-error>
+                                </mat-form-field>
                             </div>
                             <div class="col-12 col-md-6 py-2">
-                                <label for="category" class="custom-field outlined">
-                                    <select
-                                        type="number"
-                                        formControlName="categoriesId"
-                                        autocomplete="off"
-                                        class="text-white"
-                                        data-type="name"
-                                        name="category"
-                                        id="category"
-                                        required
-                                    >
-                                        <option
-                                            class="bg-darken"
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Seleccione una categoria</mat-label>
+                                    <mat-select formControlName="categoriesId">
+                                        <mat-option
                                             *ngFor="let category of categories"
-                                            value="{{ category.id }}"
-                                        >{{ category.name }}</option>
-                                    </select>
-                                    <small class="placeholder bg-darken">Seleccione una categoria</small>
-                                </label>
-                                <small class="form-text text-white">Agregue una categoria</small>
+                                            [value]="category.id"
+                                        >
+                                            {{ category.name }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-hint>Seleccione la categoria del producto.</mat-hint>
+                                    <mat-error *ngIf="form.get('categoriesId')?.invalid">{{ getCategoriesIdError() }}</mat-error>
+                                </mat-form-field>
                             </div>
                             <div class="col-12 col-md-6 py-2">
-                                <label for="price" class="custom-field outlined">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Precio</mat-label>
                                     <input
                                         formControlName="price"
                                         autocomplete="off"
-                                        class="text-white"
-                                        data-type="name"
                                         type="number"
-                                        name="price"
-                                        id="price"
                                         required
+                                        matInput
                                     >
-                                    <small class="placeholder bg-darken">Precio</small>
-                                </label>
-                                <small class="form-text text-white">Ingrese el precio del producto</small>
+                                    <mat-hint>Ingrese el precio del producto</mat-hint>
+                                    <mat-error *ngIf="form.get('price')?.invalid">{{ getPriceError() }}</mat-error>
+                                </mat-form-field>
                             </div>
                             <div class="col-12 py-2">
-                                <label for="name" class="custom-field outlined">
+                                <mat-form-field appearance="outline" class="w-100">
+                                    <mat-label>Descripcion</mat-label>
                                     <textarea
                                         formControlName="description"
-                                        autocomplete="off"
-                                        class="text-white"
-                                        data-type="name"
-                                        name="name"
-                                        id="name"
-                                        autofocus
+                                        matInput
                                         required
                                     ></textarea>
-                                    <small class="placeholder bg-darken">Descripcion</small>
-                                </label>
-                                <small class="form-text text-white">Agregue una descripcion al producto.</small>
+                                    <mat-hint>Agregue una descripcion del producto</mat-hint>
+                                    <mat-error *ngIf="form.get('description')?.invalid">{{ getDescriptionError() }}</mat-error>
+                                </mat-form-field>
                             </div>
                         </div>
                         <div class="d-flex align-items-center pt-3">

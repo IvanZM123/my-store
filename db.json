@@ -228,6 +228,16 @@
       "createdAt": "2021-08-27T21:07:17.759Z",
       "updatedAt": "2021-08-27T21:07:17.759Z",
       "id": 10
+    },
+    {
+      "name": "MackBook Air",
+      "picture": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-og-202011?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1604278672000",
+      "categoriesId": 2,
+      "price": 2355.55,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "createdAt": "2021-08-28T16:38:48.244Z",
+      "updatedAt": "2021-08-28T16:38:48.244Z",
+      "id": 11
     }
   ],
   "orders": [

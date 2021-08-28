@@ -4,6 +4,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProductsRoutingModule } from './products-routing.module';
+import { GeneralComponentModule } from 'src/app/core/shared/general-component.module';
 
 import { ListProductsPageComponent } from './pages/list-products-page/list-products-page.component';
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
@@ -24,7 +25,8 @@ import { ProductStickerComponent } from './components/product-sticker/product-st
     CommonModule,
     ProductsRoutingModule,
     ReactiveFormsModule,
-    CarouselModule
+    CarouselModule,
+    GeneralComponentModule
   ]
 })
 export class ProductsModule {}
