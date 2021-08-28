@@ -1,5 +1,5 @@
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -17,6 +17,18 @@ import { StartOrderCreate } from 'src/app/core/store/orders/order.actions';
 import { selectAllClients } from 'src/app/core/store/clients/client.selectors';
 import { selectAllProducts } from 'src/app/core/store/products/product.selectors';
 
+export interface FilteredParams {
+  formControl: AbstractControl | null;
+  nameEntity: string;
+  key: string;
+}
+
+export interface FilterEntity {
+  name: string;
+  key: string;
+  entities: Array<any>;
+}
+
 @Component({
   selector: 'app-order-create-page',
   templateUrl: './order-create-page.component.html',
@@ -31,8 +43,8 @@ export class OrderCreatePageComponent implements OnInit {
   products: Array<Product> = [];
   clients: Array<Client> = []
 
-  filteredClients$!: Observable<Array<Client>> | undefined;
   filteredProducts$!: Observable<Array<Product>> | undefined;
+  filteredClients$!: Observable<Array<Client>> | undefined;
 
   constructor(private store: NgrxStore<Store>) {}
 
@@ -45,36 +57,41 @@ export class OrderCreatePageComponent implements OnInit {
       products => this.products = products
     );
 
-    this.filteredClients$ = this.form.get("client")?.valueChanges.pipe(
-      startWith(""),
-      map(value => typeof value === "string" ? value : value.name),
-      map(name => name ? this.filterClients(name) : this.clients.slice())
-    );
+    this.filteredClients$ = this.filteredEntities({
+      formControl: this.form.get("client"),
+      nameEntity: "clients",
+      key: "firstName"
+    });
 
-    this.filteredProducts$ = this.form.get("product")?.valueChanges.pipe(
-      startWith(""),
-      map(value => typeof value === "string" ? value : value.name),
-      map(name => name ? this.filterProducts(name) : this.products.slice())
-    );
+    this.filteredProducts$ = this.filteredEntities({
+      formControl: this.form.get("product"),
+      nameEntity: "products",
+      key: "name"
+    });
 
     this.store.dispatch(StartClientList({}));
     this.store.dispatch(StartProductList({}));
   }
 
-  filterClients(name: string): Array<Client> {
-    const keyword: string = name.toLowerCase();
-    return this.clients.filter(
-      client => client.firstName
-      .toLowerCase()
-      .includes(keyword)
+  filteredEntities(data: FilteredParams) {
+    const { formControl, nameEntity, key } = data;
+
+    return formControl?.valueChanges.pipe(
+      startWith(""),
+      map(value => typeof value === "string" ? value : value.name),
+      map(name => {
+        const value = this as any;
+        const entities: Array<any> = value[nameEntity];
+        return name ? this.filterEntities({ name, key, entities }) : entities.slice();
+      })
     );
   }
 
-  filterProducts(name: string): Array<Product> {
-    const keyword: string = name.toLowerCase();
-    return this.products.filter(
-      product => product.name
-      .toLowerCase()
+  filterEntities(payload: FilterEntity): Array<any> {
+    const keyword: string = payload.name.toLocaleLowerCase();
+    return payload.entities.filter(
+      (entity: any) => entity[payload.key]
+      .toLocaleLowerCase()
       .includes(keyword)
     );
   }
@@ -95,8 +112,6 @@ export class OrderCreatePageComponent implements OnInit {
       clientsId: this.form.value.client.id,
       quantity: this.form.value.quantity
     }
-    this.store.dispatch(
-      StartOrderCreate({ payload })
-    );
+    this.store.dispatch(StartOrderCreate({ payload }));
   }
 }

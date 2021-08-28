@@ -286,6 +286,22 @@
       "createdAt": "2021-08-28T01:33:44.392Z",
       "updatedAt": "2021-08-28T01:33:44.392Z",
       "id": 7
+    },
+    {
+      "productsId": 2,
+      "clientsId": 5,
+      "quantity": 1,
+      "createdAt": "2021-08-28T02:24:42.371Z",
+      "updatedAt": "2021-08-28T02:24:42.371Z",
+      "id": 8
+    },
+    {
+      "productsId": 6,
+      "clientsId": 5,
+      "quantity": 1,
+      "createdAt": "2021-08-28T04:45:11.430Z",
+      "updatedAt": "2021-08-28T04:45:11.430Z",
+      "id": 9
     }
   ]
 }
