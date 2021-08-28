@@ -22,7 +22,9 @@
                                                 required
                                             >
                                             <mat-hint>Ingrese el nombre del cliente</mat-hint>
-                                            <mat-error *ngIf="personalDataForm.get('firstName')?.invalid">{{ getFirstNameError() }}</mat-error>
+                                            <mat-error *ngIf="personalDataForm.get('firstName')?.invalid">
+                                                {{ getMsgError(personalDataForm, "firstName", "name") }}
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col-12 py-2">
@@ -37,7 +39,9 @@
                                                 required
                                             >
                                             <mat-hint>Ingrese los apellidos del cliente</mat-hint>
-                                            <mat-error *ngIf="personalDataForm.get('lastName')?.invalid">{{ getLastNameError() }}</mat-error>
+                                            <mat-error *ngIf="personalDataForm.get('lastName')?.invalid">
+                                                {{ getMsgError(personalDataForm, "lastName", "name") }}
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col-12 py-2">
@@ -52,7 +56,9 @@
                                                 required
                                             >
                                             <mat-hint>Ingrese la url de la fotografia del cliente</mat-hint>
-                                            <mat-error *ngIf="personalDataForm.get('avatar')?.invalid">{{ getUrlError() }}</mat-error>
+                                            <mat-error *ngIf="personalDataForm.get('avatar')?.invalid">
+                                                {{ getMsgError(personalDataForm, "avatar", "url") }}
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
 
@@ -81,7 +87,9 @@
                                                 required
                                             >
                                             <mat-hint>Ingrese el numero de telefono del cliente</mat-hint>
-                                            <mat-error *ngIf="additionalDataForm.get('phone')?.invalid">{{ getPhoneError() }}</mat-error>
+                                            <mat-error *ngIf="additionalDataForm.get('phone')?.invalid">
+                                                {{ getMsgError(additionalDataForm, "phone", "phone") }}
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col-12 py-2">
@@ -94,7 +102,9 @@
                                                 required
                                             >
                                             <mat-hint>Ingrese el NIT del cliente</mat-hint>
-                                            <mat-error *ngIf="additionalDataForm.get('NIT')?.invalid">{{ getNITError() }}</mat-error>
+                                            <mat-error *ngIf="additionalDataForm.get('NIT')?.invalid">
+                                                {{ getMsgError(additionalDataForm, "NIT", "NIT") }}
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col-12 py-2">
@@ -108,7 +118,9 @@
                                                 required
                                             >
                                             <mat-hint>Ingrese el email del cliente</mat-hint>
-                                            <mat-error *ngIf="additionalDataForm.get('email')?.invalid">{{ getEmailError() }}</mat-error>
+                                            <mat-error *ngIf="additionalDataForm.get('email')?.invalid">
+                                                {{ getMsgError(additionalDataForm, "email", "email") }}
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
 

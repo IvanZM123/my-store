@@ -5,8 +5,11 @@ import { Store as NgrxStore } from "@ngrx/store";
 import { Store } from "src/app/core/store/index";
 import { StartProductCreate } from 'src/app/core/store/products/product.actions';
 
-import { Category, CategoryService } from 'src/app/core/services/products/category.service';
 import { rules } from 'src/app/core/config/rules.config';
+
+import { Category, CategoryService } from 'src/app/core/services/products/category.service';
+
+import { getMsgFormFieldError } from 'src/app/core/helpers/validateFormField.helpers';
 
 @Component({
   selector: 'app-add-product-page',
@@ -42,43 +45,7 @@ export class AddProductPageComponent implements OnInit {
     }));
   }
 
-  getNameError(): string {
-    if (this.form.get("name")?.hasError("required")) {
-      return "Este campo es obligatorio.";
-    }
-
-    if (this.form.get("name")?.hasError("minlength")) {
-      return "Debe ser mayor a 5 caracteres.";
-    }
-
-    return "";
-  }
-
-  getPictureError(): string {
-    if (this.form.get("picture")?.hasError("required")) {
-      return "Este campo es obligatorio.";
-    }
-    return rules.url.msgError;
-  }
-
-  getCategoriesIdError(): string {
-    if (this.form.get("categoriesId")?.hasError("required")) {
-      return "Este campo es obligatorio.";
-    }
-    return "";
-  }
-
-  getPriceError(): string {
-    if (this.form.get("price")?.hasError("required")) {
-      return "Este campo es requerido.";
-    }
-    return "El formato ingresado es invalido..";
-  }
-
-  getDescriptionError(): string {
-    if (this.form.get("description")?.hasError("required")) {
-      return "Este campo es requerido.";
-    }
-    return "";
+  getMsgError(field:string, nameRegex: string = ""): string {
+    return getMsgFormFieldError(this.form, field, nameRegex);
   }
 }

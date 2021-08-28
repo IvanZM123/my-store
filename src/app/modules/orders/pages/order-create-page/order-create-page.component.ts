@@ -16,6 +16,7 @@ import { StartOrderCreate } from 'src/app/core/store/orders/order.actions';
 
 import { selectAllClients } from 'src/app/core/store/clients/client.selectors';
 import { selectAllProducts } from 'src/app/core/store/products/product.selectors';
+import { getMsgFormFieldError } from 'src/app/core/helpers/validateFormField.helpers';
 
 export interface FilteredParams {
   formControl: AbstractControl | null;
@@ -113,5 +114,9 @@ export class OrderCreatePageComponent implements OnInit {
       quantity: this.form.value.quantity
     }
     this.store.dispatch(StartOrderCreate({ payload }));
+  }
+
+  getMsgError(field: string): string {
+    return getMsgFormFieldError(this.form, field);
   }
 }

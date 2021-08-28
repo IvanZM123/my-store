@@ -17,7 +17,9 @@
                                         matInput
                                     >
                                     <mat-hint>Escribe el nombre del producto.</mat-hint>
-                                    <mat-error *ngIf="form.get('name')?.invalid">{{ getNameError() }}</mat-error>
+                                    <mat-error *ngIf="form.get('name')?.invalid">
+                                        {{ getMsgError("name") }}
+                                    </mat-error>
                                 </mat-form-field>
                             </div>
                             <div class="col-12 py-2">
@@ -31,7 +33,9 @@
                                         matInput
                                     >
                                     <mat-hint>Ingrese la URL de la imagen del producto.</mat-hint>
-                                    <mat-error *ngIf="form.get('picture')?.invalid">{{ getPictureError() }}</mat-error>
+                                    <mat-error *ngIf="form.get('picture')?.invalid">
+                                        {{ getMsgError("picture", "url") }}
+                                    </mat-error>
                                 </mat-form-field>
                             </div>
                             <div class="col-12 col-md-6 py-2">
@@ -41,12 +45,12 @@
                                         <mat-option
                                             *ngFor="let category of categories"
                                             [value]="category.id"
-                                        >
-                                            {{ category.name }}
-                                        </mat-option>
+                                        >{{ category.name }}</mat-option>
                                     </mat-select>
                                     <mat-hint>Seleccione la categoria del producto.</mat-hint>
-                                    <mat-error *ngIf="form.get('categoriesId')?.invalid">{{ getCategoriesIdError() }}</mat-error>
+                                    <mat-error *ngIf="form.get('categoriesId')?.invalid">
+                                        {{ getMsgError("categoriesId") }}
+                                    </mat-error>
                                 </mat-form-field>
                             </div>
                             <div class="col-12 col-md-6 py-2">
@@ -60,7 +64,9 @@
                                         matInput
                                     >
                                     <mat-hint>Ingrese el precio del producto</mat-hint>
-                                    <mat-error *ngIf="form.get('price')?.invalid">{{ getPriceError() }}</mat-error>
+                                    <mat-error *ngIf="form.get('price')?.invalid">
+                                        {{ getMsgError("price") }}
+                                    </mat-error>
                                 </mat-form-field>
                             </div>
                             <div class="col-12 py-2">
@@ -72,7 +78,9 @@
                                         required
                                     ></textarea>
                                     <mat-hint>Agregue una descripcion del producto</mat-hint>
-                                    <mat-error *ngIf="form.get('description')?.invalid">{{ getDescriptionError() }}</mat-error>
+                                    <mat-error *ngIf="form.get('description')?.invalid">
+                                        {{ getMsgError("description") }}
+                                    </mat-error>
                                 </mat-form-field>
                             </div>
                         </div>

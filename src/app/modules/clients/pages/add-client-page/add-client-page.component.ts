@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { rules } from 'src/app/core/config/rules.config';
+
 import { Store as NgrxStore } from "@ngrx/store";
 import { Store } from "src/app/core/store/index";
 
 import { StartClientCreate } from 'src/app/core/store/clients/client.actions';
-import { rules } from 'src/app/core/config/rules.config';
+
+import { getMsgFormFieldError } from 'src/app/core/helpers/validateFormField.helpers';
 
 @Component({
   selector: 'app-add-client-page',
@@ -47,45 +50,7 @@ export class AddClientPageComponent implements OnInit {
     this.store.dispatch(action);
   }
 
-  getFirstNameError() {
-    if (this.personalDataForm.get("firstName")?.hasError("required")) {
-      return "Este campo es requerido";
-    }
-    return rules.name.msgError;
-  }
-
-  getLastNameError() {
-    if (this.personalDataForm.get("lastName")?.hasError("required")) {
-      return "Este campo es requerido";
-    }
-    return rules.name.msgError;
-  }
-
-  getUrlError() {
-    if (this.personalDataForm.get("avatar")?.hasError("required")) {
-      return "Este campo es requerido";
-    }
-    return rules.url.msgError;
-  }
-
-  getPhoneError() {
-    if (this.personalDataForm.get("phone")?.hasError("required")) {
-      return "Este campo es requerido";
-    }
-    return rules.phone.msgError;
-  }
-
-  getNITError() {
-    if (this.personalDataForm.get("NIT")?.hasError("required")) {
-      return "Este campo es requerido";
-    }
-    return rules.NIT.msgError;
-  }
-
-  getEmailError() {
-    if (this.personalDataForm.get("email")?.hasError("required")) {
-      return "Este campo es requerido";
-    }
-    return "El email es invalido. Siga la siguiente estrutura abc@gmail.com";
+  getMsgError(form: FormGroup, field: string, nameRegex: string = ""): string {
+    return getMsgFormFieldError(form, field, nameRegex);
   }
 }
