@@ -23,14 +23,14 @@ export class AddClientPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.personalDataForm = this.formBuilder.group({
-      firstName: new FormControl("", [Validators.required, Validators.pattern(rules.name)]),
-      lastName: new FormControl("", [Validators.required, Validators.pattern(rules.name)]),
-      avatar: new FormControl("", [Validators.required, Validators.pattern(rules.url)])  
+      firstName: new FormControl("", [Validators.required, Validators.pattern(rules.name.regex)]),
+      lastName: new FormControl("", [Validators.required, Validators.pattern(rules.name.regex)]),
+      avatar: new FormControl("", [Validators.required, Validators.pattern(rules.url.regex)])  
     });
 
     this.additionalDataForm = this.formBuilder.group({
-      phone: new FormControl("", [Validators.required, Validators.pattern(rules.phone)]),
-      NIT: new FormControl("", [Validators.required, Validators.pattern(rules.NIT)]),
+      phone: new FormControl("", [Validators.required, Validators.pattern(rules.phone.regex)]),
+      NIT: new FormControl("", [Validators.required, Validators.pattern(rules.NIT.regex)]),
       email: new FormControl("", [Validators.email, Validators.email])
     });
   }
@@ -51,35 +51,35 @@ export class AddClientPageComponent implements OnInit {
     if (this.personalDataForm.get("firstName")?.hasError("required")) {
       return "Este campo es requerido";
     }
-    return "El nombre es invalido.";
+    return rules.name.msgError;
   }
 
   getLastNameError() {
     if (this.personalDataForm.get("lastName")?.hasError("required")) {
       return "Este campo es requerido";
     }
-    return "El nombre es invalido.";
+    return rules.name.msgError;
   }
 
   getUrlError() {
     if (this.personalDataForm.get("avatar")?.hasError("required")) {
       return "Este campo es requerido";
     }
-    return "La URL es invalida";
+    return rules.url.msgError;
   }
 
   getPhoneError() {
     if (this.personalDataForm.get("phone")?.hasError("required")) {
       return "Este campo es requerido";
     }
-    return "El numero de telefono es invalido";
+    return rules.phone.msgError;
   }
 
   getNITError() {
     if (this.personalDataForm.get("NIT")?.hasError("required")) {
       return "Este campo es requerido";
     }
-    return "El NIT es invalido. Siga la siguiente estructura 0000-0000-0000-0";
+    return rules.NIT.msgError;
   }
 
   getEmailError() {

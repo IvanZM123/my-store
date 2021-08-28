@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-5 p-2">
-            <div class="card border-0 bg-darken shadow">
+            <div class="card border-0 bg-darken shadow rounded-20">
                 <div class="card-body">
                     <mat-horizontal-stepper class="bg-darken" [linear]="true">
                         <mat-step [stepControl]="personalDataForm">
@@ -69,8 +69,8 @@
                             <form [formGroup]="additionalDataForm">
                                 <ng-template matStepLabel>Datos Adicionales</ng-template>
 
-                                <div class="row">
-                                    <div class="col-12">
+                                <div class="row pt-3">
+                                    <div class="col-12 py-2">
                                         <mat-form-field appearance="outline" class="w-100">
                                             <mat-label>Telefono</mat-label>
                                             <input
@@ -84,7 +84,7 @@
                                             <mat-error *ngIf="additionalDataForm.get('phone')?.invalid">{{ getPhoneError() }}</mat-error>
                                         </mat-form-field>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 py-2">
                                         <mat-form-field appearance="outline" class="w-100">
                                             <mat-label>NIT</mat-label>
                                             <input
@@ -97,7 +97,7 @@
                                             <mat-error *ngIf="additionalDataForm.get('NIT')?.invalid">{{ getNITError() }}</mat-error>
                                         </mat-form-field>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 py-2">
                                         <mat-form-field appearance="outline" class="w-100">
                                             <mat-label>Email</mat-label>
                                             <input
