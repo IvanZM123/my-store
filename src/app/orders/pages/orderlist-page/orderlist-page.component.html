@@ -7,7 +7,7 @@
         >Crear orden</button>
     </div>
     <div class="table-responsive">
-        <table class="table bg-darken text-white shadow" style="border-radius: 20px;">
+        <table class="table bg-darken text-white shadow rounded-20">
             <thead>
                 <tr>
                     <th scope="col" class="p-3">#</th>
@@ -25,9 +25,10 @@
                         <div class="d-flex align-items-center">
                             <img
                                 src="{{ order.clients?.avatar }}"
-                                width="30px"
-                                height="30px"
+                                style="object-fit: cover;"
                                 class="rounded-circle"
+                                height="30px"
+                                width="30px"
                                 alt="Avatar"
                             >
                             <span class="ms-3">{{ order.clients?.firstName }}</span>
@@ -36,7 +37,7 @@
                     <td class="border-0 p-3">{{ order.products?.name }}</td>
                     <td class="border-0 p-3">{{ order.createdAt | date }}</td>
                     <td class="border-0 p-3">{{ order.quantity }}</td>
-                    <td class="border-0 p-3">${{ order.quantity * (order.products?.price || 0) }}</td>
+                    <td class="border-0 p-3">${{ order.quantity * (order.products?.price || 0) | number }}</td>
                 </tr>
             </tbody>
         </table>
