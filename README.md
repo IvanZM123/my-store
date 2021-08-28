@@ -1,6 +1,8 @@
 # MyStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+<img src="https://res.cloudinary.com/dlkfpx8lb/image/upload/v1630109093/App_banners/Captura_de_pantalla_47_bbwngj.png" width="100%">
+
+It is a SPA application developed with Angular. This application simulates the behavior of an ecommerce, since you can add products, orders, customers, and more ...
 
 ## Development server
 
