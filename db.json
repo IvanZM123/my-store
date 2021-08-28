@@ -82,6 +82,17 @@
       "createdAt": "2021-08-27T23:28:55.385Z",
       "updatedAt": "2021-08-27T23:28:55.385Z",
       "id": 9
+    },
+    {
+      "firstName": "Nelson Ivan",
+      "lastName": "Zaldivar Morales",
+      "avatar": "https://scontent-mia3-2.xx.fbcdn.net/v/t1.6435-9/97792303_2600108270258461_2263407375119548416_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=sNoNmvEzQmwAX8ILpyv&tn=XlTpdS1z41hJ0D7o&_nc_ht=scontent-mia3-2.xx&oh=14dcf90dd783c986a49f1af0cf902645&oe=614EF40F",
+      "phone": 72955570,
+      "NIT": "0000-0000-0000-0",
+      "email": "ivanzaldivar16@gmail.com",
+      "createdAt": "2021-08-28T01:13:26.970Z",
+      "updatedAt": "2021-08-28T01:13:26.970Z",
+      "id": 10
     }
   ],
   "categories": [
