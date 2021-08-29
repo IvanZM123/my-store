@@ -248,16 +248,6 @@
       "createdAt": "2021-08-29T05:10:02.172Z",
       "updatedAt": "2021-08-29T05:10:02.172Z",
       "id": 12
-    },
-    {
-      "name": "Smart Tv",
-      "picture": "https://www.tuexpertoapps.com/wp-content/uploads/2019/05/apple-tv-samsung-1.jpg",
-      "categoriesId": 3,
-      "price": 4565.8,
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-      "createdAt": "2021-08-29T19:55:44.297Z",
-      "updatedAt": "2021-08-29T19:55:44.297Z",
-      "id": 13
     }
   ],
   "orders": [
