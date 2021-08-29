@@ -238,6 +238,16 @@
       "createdAt": "2021-08-28T16:38:48.244Z",
       "updatedAt": "2021-08-28T16:38:48.244Z",
       "id": 11
+    },
+    {
+      "name": "ChiQ Tv",
+      "picture": "https://rumah.com.au/wp-content/uploads/2020/07/chiq-tv-review-1.jpg",
+      "categoriesId": 3,
+      "price": 4350.99,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      "createdAt": "2021-08-29T05:10:02.172Z",
+      "updatedAt": "2021-08-29T05:10:02.172Z",
+      "id": 12
     }
   ],
   "orders": [
@@ -312,6 +322,14 @@
       "createdAt": "2021-08-28T04:45:11.430Z",
       "updatedAt": "2021-08-28T04:45:11.430Z",
       "id": 9
+    },
+    {
+      "productsId": 12,
+      "clientsId": 6,
+      "quantity": 2,
+      "createdAt": "2021-08-29T05:11:52.607Z",
+      "updatedAt": "2021-08-29T05:11:52.607Z",
+      "id": 10
     }
   ]
 }
