@@ -9,10 +9,11 @@
             <strong>{{ product.price | dollarPrice }}</strong>
         </h3>
         <span class="spacer"></span>
-        <span
+        <span *ngIf="product.categories"
             [appAddColor]="product.categories.color"
-            class="px-3 py-2 rounded-pill"
-        >{{ product.categories.name }}</span>
+            class="px-3 py-2 rounded-pill">
+            {{ product.categories.name }}
+        </span>
     </div>
     <div class="card-body pt-0">
         <h2 class="m-0">
