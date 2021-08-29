@@ -17,5 +17,9 @@ export const rules = {
   },
   email: {
     msgError: "El email es invalido. Siga la siguiente estructura abc@domain.com"
+  },
+  onlyNumber: {
+    msgError: "Tiene que ingresar numeros",
+    regex: /[0-9]/
   }
 };

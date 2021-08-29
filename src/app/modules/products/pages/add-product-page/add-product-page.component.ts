@@ -20,7 +20,7 @@ export class AddProductPageComponent implements OnInit {
   form: FormGroup = new FormGroup({
     name: new FormControl("", [Validators.required, Validators.minLength(5)]),
     picture: new FormControl("", [Validators.required, Validators.pattern(rules.url.regex)]),
-    categoriesId: new FormControl("", [Validators.required, Validators.pattern(/[0-9]/)]),
+    categoriesId: new FormControl("", [Validators.required, Validators.pattern(rules.onlyNumber.regex)]),
     price: new FormControl("", [Validators.required]),
     description: new FormControl("", [Validators.required])
   });

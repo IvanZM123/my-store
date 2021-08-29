@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-12 col-sm-9 col-lg-7 col-xl-5 p-2">
+        <div class="col-12 col-sm-9 col-lg-7 col-xl-4 p-2">
             <div class="card border-0 bg-darken shadow" style="border-radius: 20px;">
                 <div class="card-body p-4">
                     <form (ngSubmit)="create()" [formGroup]="form" class="text-white">
@@ -49,7 +49,7 @@
                                     </mat-select>
                                     <mat-hint>Seleccione la categoria del producto.</mat-hint>
                                     <mat-error *ngIf="form.get('categoriesId')?.invalid">
-                                        {{ getMsgError("categoriesId") }}
+                                        {{ getMsgError("categoriesId", "onlyNumber") }}
                                     </mat-error>
                                 </mat-form-field>
                             </div>
