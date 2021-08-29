@@ -10,6 +10,8 @@ import { ListProductsPageComponent } from './pages/list-products-page/list-produ
 import { ProductDetailsPageComponent } from './pages/product-details-page/product-details-page.component';
 import { AddProductPageComponent } from './pages/add-product-page/add-product-page.component';
 
+import { AddColorDirective } from 'src/app/core/directives/add-color.directive';
+
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductStickerComponent } from './components/product-sticker/product-sticker.component';
 
@@ -19,7 +21,8 @@ import { ProductStickerComponent } from './components/product-sticker/product-st
     ProductDetailsPageComponent,
     AddProductPageComponent,
     ProductCardComponent,
-    ProductStickerComponent
+    ProductStickerComponent,
+    AddColorDirective
   ],
   imports: [
     CommonModule,
