@@ -20,7 +20,7 @@
                     </div>
                     <span class="spacer"></span>
                     <p class="m-0">
-                        Precio: <strong>${{ (product$ | async)?.price }}</strong>
+                        Precio: <strong>{{ (product$ | async)?.price | dollarPrice }}</strong>
                     </p>
                 </div>
 

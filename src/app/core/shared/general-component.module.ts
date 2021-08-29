@@ -4,13 +4,16 @@ import { RouterModule } from '@angular/router';
 
 import { AngularMaterial } from '../material/angular-material';
 
+import { DollarPricePipe } from '../pipes/dollar-price.pipe';
+
 import { OrderStickerComponent } from '../components/order-sticker/order-sticker.component';
 import { ClientTableComponent } from '../components/client-table/client-table.component';
 
 @NgModule({
   declarations: [
     OrderStickerComponent,
-    ClientTableComponent
+    ClientTableComponent,
+    DollarPricePipe
   ],
   imports: [
     CommonModule,
@@ -20,7 +23,8 @@ import { ClientTableComponent } from '../components/client-table/client-table.co
   exports: [
     AngularMaterial,
     OrderStickerComponent,
-    ClientTableComponent
+    ClientTableComponent,
+    DollarPricePipe
   ]
 })
 export class GeneralComponentModule {}
