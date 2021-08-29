@@ -4,7 +4,7 @@ import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 import { Notification } from '../../helpers/notifier';
 
 @Component({
-  selector: 'app-notification',
+  selector: 'notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })

@@ -14,7 +14,7 @@
                 <div class="card-body rounded-20 pt-2">
                     <ul class="list-group mb-2">
                         <li class="list-group-item bg-darken border-0 py-3" *ngFor="let order of orders$ | async">
-                            <app-order-sticker [order]="order"></app-order-sticker>
+                            <order-sticker [order]="order"></order-sticker>
                         </li>
                     </ul>
                 </div>

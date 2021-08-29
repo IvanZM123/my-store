@@ -2,7 +2,7 @@
     <section>
         <div class="row justify-content-xl-center">
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-3" *ngFor="let item of items">
-                <app-item-card [item]="item"></app-item-card>
+                <item-card [item]="item"></item-card>
             </div>
         </div>
     </section>
@@ -17,7 +17,7 @@
                             <span class="ms-3">Lista de usuarios</span>
                         </div>
                     </div>
-                    <app-client-table [clients]="clients$ | async"></app-client-table>
+                    <client-table [clients]="clients$ | async"></client-table>
                 </div>
             </div>
             <div class="col-12 col-lg-4 p-3">
@@ -30,9 +30,9 @@
                     </div>
                     <div class="card-body rounded-20">
                         <div class="py-3" *ngFor="let order of orders$ | async">
-                            <app-order-sticker
+                            <order-sticker
                                 [order]="order"
-                            ></app-order-sticker>
+                            ></order-sticker>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/core/services/products/product.service';
 
 @Component({
-  selector: 'app-product-sticker',
+  selector: 'product-sticker',
   templateUrl: './product-sticker.component.html',
   styleUrls: ['./product-sticker.component.css']
 })
