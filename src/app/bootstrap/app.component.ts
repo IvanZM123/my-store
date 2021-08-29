@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router, Routes } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 import { LazyLoaderService } from '../loaders/lazy-loader.service';
 
@@ -9,6 +9,12 @@ import { LazyLoaderService } from '../loaders/lazy-loader.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  items: Array<Record<string, string>> = [
+    { title: "Productos", icon: "shopping-bag", path: "products" },
+    { title: "Clientes", icon: "group", path: "clients" },
+    { title: "Ordenes", icon: "cart", path: "orders" }
+  ];
+
   constructor(
     private lazyLoader: LazyLoaderService,
     private router: Router
