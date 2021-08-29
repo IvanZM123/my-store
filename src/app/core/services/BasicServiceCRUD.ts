@@ -13,7 +13,12 @@ export abstract class BasicServiceCRUD<T> {
     protected readonly url!: string;
 
     constructor(protected http: HttpClient) {}
-    
+
+    /**
+     * Create a new resource.
+     * @param data 
+     * @returns 
+     */
     create(data: Partial<T>): Observable<T> {
         const payload: Partial<T> = {
             ...data,
@@ -24,11 +29,22 @@ export abstract class BasicServiceCRUD<T> {
         return this.http.post<T>(this.url, payload);
     }
 
+    /**
+     * Get a list of resources.
+     * @param params 
+     * @returns 
+     */
     list(params?: Params): Observable<Array<T>> {
         const query: string = parseParams(params);
         return this.http.get<Array<T>>(`${ this.url }?${ query }`);
     }
 
+    /**
+     * Get a resource by Id.
+     * @param id 
+     * @param params 
+     * @returns 
+     */
     get(id: Id, params?: Params): Observable<T> {
         const query: string = parseParams(params);
         const url: string = `${ this.url }/${ id }?${ query }`;
