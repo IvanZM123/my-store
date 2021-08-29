@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Client } from 'src/app/core/services/clients/clients.service';
+import { Order } from 'src/app/core/services/orders/order.service';
 
 import { Store as NgrxStore } from "@ngrx/store";
 import { Store } from "src/app/core/store/index";
 
 import { StartClientList } from 'src/app/core/store/clients/client.actions';
-import { selectAllClients } from 'src/app/core/store/clients/client.selectors';
 import { StartOrderList } from 'src/app/core/store/orders/order.actions';
-import { Order } from 'src/app/core/services/orders/order.service';
-import { selectAllOrders } from 'src/app/core/store/orders/order.selectors';
+
+import { selectClientsLimit } from 'src/app/core/store/clients/client.selectors';
+import { selectOrderLimit } from 'src/app/core/store/orders/order.selectors';
 
 @Component({
   selector: 'app-home',
@@ -47,12 +48,12 @@ export class HomeComponent implements OnInit {
   constructor(private store: NgrxStore<Store>) {}
 
   ngOnInit(): void {
-    this.clients$ = this.store.select(selectAllClients);
+    this.clients$ = this.store.select(selectClientsLimit(5));
     this.store.dispatch(StartClientList({ params: { _limit: 5 } }));
 
-    this.orders$ = this.store.select(selectAllOrders);
+    this.orders$ = this.store.select(selectOrderLimit(6));
     this.store.dispatch(StartOrderList({ params: {
-      _limit: 5,
+      _limit: 6,
       _expand: ["products", "clients"]
     } }));
   }

@@ -4,13 +4,14 @@
             <app-client-card [client]="client$ | async"></app-client-card>
         </div>
         <div class="col-12 col-lg-8 p-3">
-            <div class="card border-0 bg-darken shadow">
-                <div class="card-header border-0 bg-darken">
-                    <div class="d-flex align-items-center pb-3">
-                        <i class='bx bxs-shopping-bag' style="font-size: 20px;"></i>
+            <div class="card border-0 bg-darken shadow rounded-20">
+                <div class="card-header border-0 bg-darken rounded-20 mt-2">
+                    <div class="d-flex align-items-center">
+                        <i class='bx bxs-shopping-bag'></i>
                         <h3 class="ms-3 m-0">Compras realizadas</h3>
                     </div>
-
+                </div>
+                <div class="card-body rounded-20 pt-2">
                     <ul class="list-group mb-2">
                         <li class="list-group-item bg-darken border-0 py-3" *ngFor="let order of orders$ | async">
                             <app-order-sticker [order]="order"></app-order-sticker>
