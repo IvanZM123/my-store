@@ -6,7 +6,7 @@
         <div class="d-flex w-100 item-list-title">
             <p class="m-0">{{ order.products?.name }}</p>
             <span class="spacer"></span>
-            <p class="m-0">${{ order.products?.price || 0 * order.quantity }}</p>
+            <p class="m-0">${{ total(order) | number }}</p>
         </div>
         <div class="d-flex w-100 text-purple">
             <small>{{ order.clients?.firstName }}</small>

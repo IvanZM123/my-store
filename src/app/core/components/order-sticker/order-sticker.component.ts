@@ -9,4 +9,8 @@ import { Order } from '../../services/orders/order.service';
 })
 export class OrderStickerComponent {
   @Input() order!: Order;
+
+  total(order: Order): number {
+    return order.quantity * (order.products?.price || 0);
+  }
 }

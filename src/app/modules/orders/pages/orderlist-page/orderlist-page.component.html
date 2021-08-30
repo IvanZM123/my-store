@@ -37,7 +37,7 @@
                     <td class="border-0 p-3">{{ order.products?.name }}</td>
                     <td class="border-0 p-3">{{ order.createdAt | date }}</td>
                     <td class="border-0 p-3">{{ order.quantity }}</td>
-                    <td class="border-0 p-3">${{ order.quantity * (order.products?.price || 0) | number }}</td>
+                    <td class="border-0 p-3">${{ total(order) | number }}</td>
                 </tr>
             </tbody>
         </table>
